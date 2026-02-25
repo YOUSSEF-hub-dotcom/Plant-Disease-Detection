@@ -220,6 +220,7 @@ Features:
 - Registry-based deployment
 - Real-time monitoring & logging
 - Full-stack AI system (Model + API + DB + UI)
+- Observability: Logging, latency monitoring, prediction persistence.
 
 ---
 
