@@ -1,0 +1,634 @@
+2026-02-21 22:53:41,474 - DataLoad - INFO - --- System Test ---
+2026-02-21 22:53:41,476 - DataLoad - INFO - TensorFlow Version: 2.20.0
+2026-02-21 22:53:44,584 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-21 22:53:44,585 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-21 22:53:44,586 - DataLoad - INFO - --- Dataset Verification ---
+2026-02-21 22:53:44,593 - DataLoad - INFO - ✅ Success! Path exists.
+2026-02-21 22:53:44,595 - DataLoad - INFO - ✅ Total Classes Found: 38
+2026-02-21 22:53:44,596 - DataLoad - INFO - Sample Classes (First 10): ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight']
+2026-02-21 22:58:28,524 - DataLoad - INFO - --- System Test ---
+2026-02-21 22:58:28,524 - DataLoad - INFO - TensorFlow Version: 2.20.0
+2026-02-21 22:58:32,136 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-21 22:58:32,137 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-21 22:58:32,137 - DataLoad - INFO - --- Dataset Verification ---
+2026-02-21 22:58:32,140 - DataLoad - INFO - ✅ Success! Path exists.
+2026-02-21 22:58:32,141 - DataLoad - INFO - ✅ Total Classes Found: 38
+2026-02-21 22:58:32,141 - DataLoad - INFO - Sample Classes (First 10): ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight']
+2026-02-21 22:58:43,447 - MainPipeline - INFO - 🎬 Starting the Full Plant Disease MLOps Pipeline...
+2026-02-21 22:58:43,450 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-21 22:58:43,450 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-21 22:58:43,451 - MainPipeline - INFO - 📂 Splitting data...
+2026-02-21 22:58:43,451 - DataSplitting - INFO - Starting data splitting process...
+2026-02-21 22:58:43,483 - DataSplitting - INFO - Found 38 classes to split.
+2026-02-21 22:58:44,690 - DataSplitting - INFO - Successfully split class: Pepper,_bell___healthy | Train: 1182, Val: 148, Test: 148
+2026-02-21 22:58:45,166 - DataSplitting - INFO - Successfully split class: Apple___Apple_scab | Train: 504, Val: 63, Test: 63
+2026-02-21 22:58:45,646 - DataSplitting - INFO - Successfully split class: Apple___Black_rot | Train: 496, Val: 62, Test: 63
+2026-02-21 22:58:47,458 - DataSplitting - INFO - Successfully split class: Peach___Bacterial_spot | Train: 1837, Val: 230, Test: 230
+2026-02-21 22:58:48,854 - DataSplitting - INFO - Successfully split class: Tomato___Septoria_leaf_spot | Train: 1416, Val: 177, Test: 178
+2026-02-21 22:58:49,625 - DataSplitting - INFO - Successfully split class: Tomato___Early_blight | Train: 800, Val: 100, Test: 100
+2026-02-21 22:58:51,279 - DataSplitting - INFO - Successfully split class: Tomato___Bacterial_spot | Train: 1701, Val: 213, Test: 213
+2026-02-21 22:58:55,699 - DataSplitting - INFO - Successfully split class: Orange___Haunglongbing_(Citrus_greening) | Train: 4405, Val: 551, Test: 551
+2026-02-21 22:58:56,740 - DataSplitting - INFO - Successfully split class: Squash___Powdery_mildew | Train: 1468, Val: 183, Test: 184
+2026-02-21 22:58:57,616 - DataSplitting - INFO - Successfully split class: Grape___Esca_(Black_Measles) | Train: 1106, Val: 138, Test: 139
+2026-02-21 22:58:57,927 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot | Train: 410, Val: 51, Test: 52
+2026-02-21 22:58:58,133 - DataSplitting - INFO - Successfully split class: Peach___healthy | Train: 288, Val: 36, Test: 36
+2026-02-21 22:58:58,320 - DataSplitting - INFO - Successfully split class: Apple___Cedar_apple_rust | Train: 220, Val: 27, Test: 28
+2026-02-21 22:58:58,916 - DataSplitting - INFO - Successfully split class: Tomato___Leaf_Mold | Train: 761, Val: 95, Test: 96
+2026-02-21 22:58:59,831 - DataSplitting - INFO - Successfully split class: Blueberry___healthy | Train: 1201, Val: 150, Test: 151
+2026-02-21 22:59:00,638 - DataSplitting - INFO - Successfully split class: Pepper,_bell___Bacterial_spot | Train: 797, Val: 100, Test: 100
+2026-02-21 22:59:07,916 - DataSplitting - INFO - Successfully split class: Tomato___Tomato_Yellow_Leaf_Curl_Virus | Train: 4285, Val: 536, Test: 536
+2026-02-21 22:59:08,909 - DataSplitting - INFO - Successfully split class: Corn_(maize)___healthy | Train: 929, Val: 116, Test: 117
+2026-02-21 22:59:09,578 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Northern_Leaf_Blight | Train: 788, Val: 98, Test: 99
+2026-02-21 22:59:12,707 - DataSplitting - INFO - Successfully split class: Soybean___healthy | Train: 4072, Val: 509, Test: 509
+2026-02-21 22:59:13,361 - DataSplitting - INFO - Successfully split class: Potato___Late_blight | Train: 800, Val: 100, Test: 100
+2026-02-21 22:59:14,819 - DataSplitting - INFO - Successfully split class: Apple___healthy | Train: 1316, Val: 164, Test: 165
+2026-02-21 22:59:15,775 - DataSplitting - INFO - Successfully split class: Grape___Leaf_blight_(Isariopsis_Leaf_Spot) | Train: 860, Val: 108, Test: 108
+2026-02-21 22:59:16,964 - DataSplitting - INFO - Successfully split class: Tomato___Target_Spot | Train: 1123, Val: 140, Test: 141
+2026-02-21 22:59:18,293 - DataSplitting - INFO - Successfully split class: Tomato___healthy | Train: 1272, Val: 159, Test: 160
+2026-02-21 22:59:19,625 - DataSplitting - INFO - Successfully split class: Tomato___Late_blight | Train: 1527, Val: 191, Test: 191
+2026-02-21 22:59:19,919 - DataSplitting - INFO - Successfully split class: Strawberry___healthy | Train: 364, Val: 46, Test: 46
+2026-02-21 22:59:20,216 - DataSplitting - INFO - Successfully split class: Raspberry___healthy | Train: 296, Val: 37, Test: 38
+2026-02-21 22:59:21,179 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Common_rust_ | Train: 953, Val: 119, Test: 120
+2026-02-21 22:59:22,153 - DataSplitting - INFO - Successfully split class: Grape___Black_rot | Train: 944, Val: 118, Test: 118
+2026-02-21 22:59:22,491 - DataSplitting - INFO - Successfully split class: Grape___healthy | Train: 338, Val: 42, Test: 43
+2026-02-21 22:59:23,779 - DataSplitting - INFO - Successfully split class: Tomato___Spider_mites Two-spotted_spider_mite | Train: 1340, Val: 168, Test: 168
+2026-02-21 22:59:24,493 - DataSplitting - INFO - Successfully split class: Cherry_(including_sour)___healthy | Train: 683, Val: 85, Test: 86
+2026-02-21 22:59:25,292 - DataSplitting - INFO - Successfully split class: Cherry_(including_sour)___Powdery_mildew | Train: 841, Val: 105, Test: 106
+2026-02-21 22:59:25,402 - DataSplitting - INFO - Successfully split class: Potato___healthy | Train: 121, Val: 15, Test: 16
+2026-02-21 22:59:26,159 - DataSplitting - INFO - Successfully split class: Potato___Early_blight | Train: 800, Val: 100, Test: 100
+2026-02-21 22:59:26,436 - DataSplitting - INFO - Successfully split class: Tomato___Tomato_mosaic_virus | Train: 298, Val: 37, Test: 38
+2026-02-21 22:59:27,285 - DataSplitting - INFO - Successfully split class: Strawberry___Leaf_scorch | Train: 887, Val: 111, Test: 111
+2026-02-21 22:59:27,285 - DataSplitting - INFO - ✅ SUCCESS: Data splitting complete. (80/10/10 ratio)
+2026-02-21 22:59:27,286 - MainPipeline - INFO - ⚙️ Preprocessing images...
+2026-02-21 22:59:27,286 - ImageProcess - INFO - 🚀 Loading datasets from split directories...
+2026-02-21 22:59:32,573 - ImageProcess - INFO - ✅ Successfully loaded classes: ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight', 'Corn_(maize)___healthy', 'Grape___Black_rot', 'Grape___Esca_(Black_Measles)', 'Grape___Leaf_blight_(Isariopsis_Leaf_Spot)', 'Grape___healthy', 'Orange___Haunglongbing_(Citrus_greening)', 'Peach___Bacterial_spot', 'Peach___healthy', 'Pepper,_bell___Bacterial_spot', 'Pepper,_bell___healthy', 'Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy', 'Raspberry___healthy', 'Soybean___healthy', 'Squash___Powdery_mildew', 'Strawberry___Leaf_scorch', 'Strawberry___healthy', 'Tomato___Bacterial_spot', 'Tomato___Early_blight', 'Tomato___Late_blight', 'Tomato___Leaf_Mold', 'Tomato___Septoria_leaf_spot', 'Tomato___Spider_mites Two-spotted_spider_mite', 'Tomato___Target_Spot', 'Tomato___Tomato_Yellow_Leaf_Curl_Virus', 'Tomato___Tomato_mosaic_virus', 'Tomato___healthy']
+2026-02-21 22:59:32,657 - ImageProcess - INFO - ✅ Preprocessing & Prefetching Complete!
+2026-02-21 22:59:32,657 - MainPipeline - CRITICAL - 💥 Pipeline failed: '_PrefetchDataset' object has no attribute 'class_names'
+Traceback (most recent call last):
+  File "/mnt/d/CM_Projects/Planet_Disses/main.py", line 46, in main
+    train_ds, val_ds, test_ds, class_names = prepare_datasets(
+                                             ^^^^^^^^^^^^^^^^^
+  File "/mnt/d/CM_Projects/Planet_Disses/image_process.py", line 45, in prepare_datasets
+    return train_ds, val_ds, test_ds, train_ds.class_names
+                                      ^^^^^^^^^^^^^^^^^^^^
+AttributeError: '_PrefetchDataset' object has no attribute 'class_names'
+2026-02-21 23:04:31,092 - DataLoad - INFO - --- System Test ---
+2026-02-21 23:04:31,092 - DataLoad - INFO - TensorFlow Version: 2.20.0
+2026-02-21 23:04:32,449 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-21 23:04:32,449 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-21 23:04:32,450 - DataLoad - INFO - --- Dataset Verification ---
+2026-02-21 23:04:32,451 - DataLoad - INFO - ✅ Success! Path exists.
+2026-02-21 23:04:32,451 - DataLoad - INFO - ✅ Total Classes Found: 38
+2026-02-21 23:04:32,451 - DataLoad - INFO - Sample Classes (First 10): ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight']
+2026-02-21 23:04:42,267 - MainPipeline - INFO - 🎬 Starting the Full Plant Disease MLOps Pipeline...
+2026-02-21 23:04:42,269 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-21 23:04:42,269 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-21 23:04:42,269 - MainPipeline - INFO - 📂 Splitting data...
+2026-02-21 23:04:42,269 - DataSplitting - INFO - Starting data splitting process...
+2026-02-21 23:04:42,270 - DataSplitting - INFO - Found 38 classes to split.
+2026-02-21 23:04:43,478 - DataSplitting - INFO - Successfully split class: Pepper,_bell___healthy | Train: 1182, Val: 148, Test: 148
+2026-02-21 23:04:43,951 - DataSplitting - INFO - Successfully split class: Apple___Apple_scab | Train: 504, Val: 63, Test: 63
+2026-02-21 23:04:44,427 - DataSplitting - INFO - Successfully split class: Apple___Black_rot | Train: 496, Val: 62, Test: 63
+2026-02-21 23:04:46,196 - DataSplitting - INFO - Successfully split class: Peach___Bacterial_spot | Train: 1837, Val: 230, Test: 230
+2026-02-21 23:04:47,580 - DataSplitting - INFO - Successfully split class: Tomato___Septoria_leaf_spot | Train: 1416, Val: 177, Test: 178
+2026-02-21 23:04:48,321 - DataSplitting - INFO - Successfully split class: Tomato___Early_blight | Train: 800, Val: 100, Test: 100
+2026-02-21 23:04:49,966 - DataSplitting - INFO - Successfully split class: Tomato___Bacterial_spot | Train: 1701, Val: 213, Test: 213
+2026-02-21 23:04:56,232 - DataSplitting - INFO - Successfully split class: Orange___Haunglongbing_(Citrus_greening) | Train: 4405, Val: 551, Test: 551
+2026-02-21 23:04:57,596 - DataSplitting - INFO - Successfully split class: Squash___Powdery_mildew | Train: 1468, Val: 183, Test: 184
+2026-02-21 23:04:58,615 - DataSplitting - INFO - Successfully split class: Grape___Esca_(Black_Measles) | Train: 1106, Val: 138, Test: 139
+2026-02-21 23:04:59,012 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot | Train: 410, Val: 51, Test: 52
+2026-02-21 23:04:59,283 - DataSplitting - INFO - Successfully split class: Peach___healthy | Train: 288, Val: 36, Test: 36
+2026-02-21 23:04:59,459 - DataSplitting - INFO - Successfully split class: Apple___Cedar_apple_rust | Train: 220, Val: 27, Test: 28
+2026-02-21 23:05:00,150 - DataSplitting - INFO - Successfully split class: Tomato___Leaf_Mold | Train: 761, Val: 95, Test: 96
+2026-02-21 23:05:01,266 - DataSplitting - INFO - Successfully split class: Blueberry___healthy | Train: 1201, Val: 150, Test: 151
+2026-02-21 23:05:02,045 - DataSplitting - INFO - Successfully split class: Pepper,_bell___Bacterial_spot | Train: 797, Val: 100, Test: 100
+2026-02-21 23:05:05,705 - DataSplitting - INFO - Successfully split class: Tomato___Tomato_Yellow_Leaf_Curl_Virus | Train: 4285, Val: 536, Test: 536
+2026-02-21 23:05:06,259 - DataSplitting - INFO - Successfully split class: Corn_(maize)___healthy | Train: 929, Val: 116, Test: 117
+2026-02-21 23:05:06,733 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Northern_Leaf_Blight | Train: 788, Val: 98, Test: 99
+2026-02-21 23:05:10,273 - DataSplitting - INFO - Successfully split class: Soybean___healthy | Train: 4072, Val: 509, Test: 509
+2026-02-21 23:05:11,070 - DataSplitting - INFO - Successfully split class: Potato___Late_blight | Train: 800, Val: 100, Test: 100
+2026-02-21 23:05:12,396 - DataSplitting - INFO - Successfully split class: Apple___healthy | Train: 1316, Val: 164, Test: 165
+2026-02-21 23:05:13,218 - DataSplitting - INFO - Successfully split class: Grape___Leaf_blight_(Isariopsis_Leaf_Spot) | Train: 860, Val: 108, Test: 108
+2026-02-21 23:05:14,334 - DataSplitting - INFO - Successfully split class: Tomato___Target_Spot | Train: 1123, Val: 140, Test: 141
+2026-02-21 23:05:15,416 - DataSplitting - INFO - Successfully split class: Tomato___healthy | Train: 1272, Val: 159, Test: 160
+2026-02-21 23:05:16,792 - DataSplitting - INFO - Successfully split class: Tomato___Late_blight | Train: 1527, Val: 191, Test: 191
+2026-02-21 23:05:17,125 - DataSplitting - INFO - Successfully split class: Strawberry___healthy | Train: 364, Val: 46, Test: 46
+2026-02-21 23:05:17,405 - DataSplitting - INFO - Successfully split class: Raspberry___healthy | Train: 296, Val: 37, Test: 38
+2026-02-21 23:05:18,251 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Common_rust_ | Train: 953, Val: 119, Test: 120
+2026-02-21 23:05:19,090 - DataSplitting - INFO - Successfully split class: Grape___Black_rot | Train: 944, Val: 118, Test: 118
+2026-02-21 23:05:19,407 - DataSplitting - INFO - Successfully split class: Grape___healthy | Train: 338, Val: 42, Test: 43
+2026-02-21 23:05:20,633 - DataSplitting - INFO - Successfully split class: Tomato___Spider_mites Two-spotted_spider_mite | Train: 1340, Val: 168, Test: 168
+2026-02-21 23:05:21,222 - DataSplitting - INFO - Successfully split class: Cherry_(including_sour)___healthy | Train: 683, Val: 85, Test: 86
+2026-02-21 23:05:22,023 - DataSplitting - INFO - Successfully split class: Cherry_(including_sour)___Powdery_mildew | Train: 841, Val: 105, Test: 106
+2026-02-21 23:05:22,127 - DataSplitting - INFO - Successfully split class: Potato___healthy | Train: 121, Val: 15, Test: 16
+2026-02-21 23:05:22,796 - DataSplitting - INFO - Successfully split class: Potato___Early_blight | Train: 800, Val: 100, Test: 100
+2026-02-21 23:05:22,995 - DataSplitting - INFO - Successfully split class: Tomato___Tomato_mosaic_virus | Train: 298, Val: 37, Test: 38
+2026-02-21 23:05:23,727 - DataSplitting - INFO - Successfully split class: Strawberry___Leaf_scorch | Train: 887, Val: 111, Test: 111
+2026-02-21 23:05:23,728 - DataSplitting - INFO - ✅ SUCCESS: Data splitting complete. (80/10/10 ratio)
+2026-02-21 23:05:23,729 - MainPipeline - INFO - ⚙️ Preprocessing images...
+2026-02-21 23:05:23,729 - ImageProcess - INFO - 🚀 Loading datasets from split directories...
+2026-02-21 23:05:31,119 - ImageProcess - INFO - ✅ Successfully loaded classes: ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight', 'Corn_(maize)___healthy', 'Grape___Black_rot', 'Grape___Esca_(Black_Measles)', 'Grape___Leaf_blight_(Isariopsis_Leaf_Spot)', 'Grape___healthy', 'Orange___Haunglongbing_(Citrus_greening)', 'Peach___Bacterial_spot', 'Peach___healthy', 'Pepper,_bell___Bacterial_spot', 'Pepper,_bell___healthy', 'Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy', 'Raspberry___healthy', 'Soybean___healthy', 'Squash___Powdery_mildew', 'Strawberry___Leaf_scorch', 'Strawberry___healthy', 'Tomato___Bacterial_spot', 'Tomato___Early_blight', 'Tomato___Late_blight', 'Tomato___Leaf_Mold', 'Tomato___Septoria_leaf_spot', 'Tomato___Spider_mites Two-spotted_spider_mite', 'Tomato___Target_Spot', 'Tomato___Tomato_Yellow_Leaf_Curl_Virus', 'Tomato___Tomato_mosaic_virus', 'Tomato___healthy']
+2026-02-21 23:05:31,207 - ImageProcess - INFO - ✅ Preprocessing & Prefetching Complete!
+2026-02-21 23:05:31,208 - DataAugmentation - INFO - 🛠️ Initializing heavy data augmentation layers...
+2026-02-21 23:05:31,230 - DataAugmentation - INFO - Applying augmentation to the training pipeline...
+2026-02-21 23:05:31,467 - DataAugmentation - INFO - ✅ Data Augmentation successfully added to the training pipeline!
+2026-02-21 23:05:31,467 - MainPipeline - INFO - 🚀 Launching MLflow Lifecycle...
+2026-02-21 23:05:31,468 - MainPipeline - CRITICAL - 💥 Pipeline failed: run_full_mlops_lifecycle() got an unexpected keyword argument 'train_ds'
+Traceback (most recent call last):
+  File "/mnt/d/CM_Projects/Planet_Disses/main.py", line 58, in main
+    run_id = run_full_mlops_lifecycle(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: run_full_mlops_lifecycle() got an unexpected keyword argument 'train_ds'
+2026-02-21 23:12:12,859 - DataLoad - INFO - --- System Test ---
+2026-02-21 23:12:12,859 - DataLoad - INFO - TensorFlow Version: 2.20.0
+2026-02-21 23:12:13,872 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-21 23:12:13,873 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-21 23:12:13,873 - DataLoad - INFO - --- Dataset Verification ---
+2026-02-21 23:12:13,875 - DataLoad - INFO - ✅ Success! Path exists.
+2026-02-21 23:12:13,875 - DataLoad - INFO - ✅ Total Classes Found: 38
+2026-02-21 23:12:13,875 - DataLoad - INFO - Sample Classes (First 10): ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight']
+2026-02-21 23:12:23,083 - MainPipeline - INFO - 🎬 Starting the Full Plant Disease MLOps Pipeline...
+2026-02-21 23:12:23,084 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-21 23:12:23,084 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-21 23:12:23,085 - MainPipeline - INFO - 📂 Splitting data...
+2026-02-21 23:12:23,085 - DataSplitting - INFO - Starting data splitting process...
+2026-02-21 23:12:23,085 - DataSplitting - INFO - Found 38 classes to split.
+2026-02-21 23:12:24,234 - DataSplitting - INFO - Successfully split class: Pepper,_bell___healthy | Train: 1182, Val: 148, Test: 148
+2026-02-21 23:12:24,707 - DataSplitting - INFO - Successfully split class: Apple___Apple_scab | Train: 504, Val: 63, Test: 63
+2026-02-21 23:12:25,181 - DataSplitting - INFO - Successfully split class: Apple___Black_rot | Train: 496, Val: 62, Test: 63
+2026-02-21 23:12:26,855 - DataSplitting - INFO - Successfully split class: Peach___Bacterial_spot | Train: 1837, Val: 230, Test: 230
+2026-02-21 23:12:28,183 - DataSplitting - INFO - Successfully split class: Tomato___Septoria_leaf_spot | Train: 1416, Val: 177, Test: 178
+2026-02-21 23:12:28,908 - DataSplitting - INFO - Successfully split class: Tomato___Early_blight | Train: 800, Val: 100, Test: 100
+2026-02-21 23:12:30,551 - DataSplitting - INFO - Successfully split class: Tomato___Bacterial_spot | Train: 1701, Val: 213, Test: 213
+2026-02-21 23:12:34,512 - DataSplitting - INFO - Successfully split class: Orange___Haunglongbing_(Citrus_greening) | Train: 4405, Val: 551, Test: 551
+2026-02-21 23:12:35,796 - DataSplitting - INFO - Successfully split class: Squash___Powdery_mildew | Train: 1468, Val: 183, Test: 184
+2026-02-21 23:12:36,750 - DataSplitting - INFO - Successfully split class: Grape___Esca_(Black_Measles) | Train: 1106, Val: 138, Test: 139
+2026-02-21 23:12:37,031 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot | Train: 410, Val: 51, Test: 52
+2026-02-21 23:12:37,248 - DataSplitting - INFO - Successfully split class: Peach___healthy | Train: 288, Val: 36, Test: 36
+2026-02-21 23:12:37,417 - DataSplitting - INFO - Successfully split class: Apple___Cedar_apple_rust | Train: 220, Val: 27, Test: 28
+2026-02-21 23:12:38,002 - DataSplitting - INFO - Successfully split class: Tomato___Leaf_Mold | Train: 761, Val: 95, Test: 96
+2026-02-21 23:12:41,436 - DataSplitting - INFO - Successfully split class: Blueberry___healthy | Train: 1201, Val: 150, Test: 151
+2026-02-21 23:12:42,194 - DataSplitting - INFO - Successfully split class: Pepper,_bell___Bacterial_spot | Train: 797, Val: 100, Test: 100
+2026-02-21 23:12:46,140 - DataSplitting - INFO - Successfully split class: Tomato___Tomato_Yellow_Leaf_Curl_Virus | Train: 4285, Val: 536, Test: 536
+2026-02-21 23:12:46,882 - DataSplitting - INFO - Successfully split class: Corn_(maize)___healthy | Train: 929, Val: 116, Test: 117
+2026-02-21 23:12:47,534 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Northern_Leaf_Blight | Train: 788, Val: 98, Test: 99
+2026-02-21 23:12:50,715 - DataSplitting - INFO - Successfully split class: Soybean___healthy | Train: 4072, Val: 509, Test: 509
+2026-02-21 23:12:51,362 - DataSplitting - INFO - Successfully split class: Potato___Late_blight | Train: 800, Val: 100, Test: 100
+2026-02-21 23:12:52,405 - DataSplitting - INFO - Successfully split class: Apple___healthy | Train: 1316, Val: 164, Test: 165
+2026-02-21 23:12:53,086 - DataSplitting - INFO - Successfully split class: Grape___Leaf_blight_(Isariopsis_Leaf_Spot) | Train: 860, Val: 108, Test: 108
+2026-02-21 23:12:53,938 - DataSplitting - INFO - Successfully split class: Tomato___Target_Spot | Train: 1123, Val: 140, Test: 141
+2026-02-21 23:12:55,003 - DataSplitting - INFO - Successfully split class: Tomato___healthy | Train: 1272, Val: 159, Test: 160
+2026-02-21 23:12:56,256 - DataSplitting - INFO - Successfully split class: Tomato___Late_blight | Train: 1527, Val: 191, Test: 191
+2026-02-21 23:12:56,539 - DataSplitting - INFO - Successfully split class: Strawberry___healthy | Train: 364, Val: 46, Test: 46
+2026-02-21 23:12:56,806 - DataSplitting - INFO - Successfully split class: Raspberry___healthy | Train: 296, Val: 37, Test: 38
+2026-02-21 23:12:57,563 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Common_rust_ | Train: 953, Val: 119, Test: 120
+2026-02-21 23:12:58,310 - DataSplitting - INFO - Successfully split class: Grape___Black_rot | Train: 944, Val: 118, Test: 118
+2026-02-21 23:12:58,612 - DataSplitting - INFO - Successfully split class: Grape___healthy | Train: 338, Val: 42, Test: 43
+2026-02-21 23:12:59,799 - DataSplitting - INFO - Successfully split class: Tomato___Spider_mites Two-spotted_spider_mite | Train: 1340, Val: 168, Test: 168
+2026-02-21 23:13:00,257 - DataSplitting - INFO - Successfully split class: Cherry_(including_sour)___healthy | Train: 683, Val: 85, Test: 86
+2026-02-21 23:13:00,830 - DataSplitting - INFO - Successfully split class: Cherry_(including_sour)___Powdery_mildew | Train: 841, Val: 105, Test: 106
+2026-02-21 23:13:00,910 - DataSplitting - INFO - Successfully split class: Potato___healthy | Train: 121, Val: 15, Test: 16
+2026-02-21 23:13:01,450 - DataSplitting - INFO - Successfully split class: Potato___Early_blight | Train: 800, Val: 100, Test: 100
+2026-02-21 23:13:01,633 - DataSplitting - INFO - Successfully split class: Tomato___Tomato_mosaic_virus | Train: 298, Val: 37, Test: 38
+2026-02-21 23:13:02,165 - DataSplitting - INFO - Successfully split class: Strawberry___Leaf_scorch | Train: 887, Val: 111, Test: 111
+2026-02-21 23:13:02,165 - DataSplitting - INFO - ✅ SUCCESS: Data splitting complete. (80/10/10 ratio)
+2026-02-21 23:13:02,166 - MainPipeline - INFO - ⚙️ Preprocessing images...
+2026-02-21 23:13:02,166 - ImageProcess - INFO - 🚀 Loading datasets from split directories...
+2026-02-21 23:13:06,818 - ImageProcess - INFO - ✅ Successfully loaded classes: ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight', 'Corn_(maize)___healthy', 'Grape___Black_rot', 'Grape___Esca_(Black_Measles)', 'Grape___Leaf_blight_(Isariopsis_Leaf_Spot)', 'Grape___healthy', 'Orange___Haunglongbing_(Citrus_greening)', 'Peach___Bacterial_spot', 'Peach___healthy', 'Pepper,_bell___Bacterial_spot', 'Pepper,_bell___healthy', 'Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy', 'Raspberry___healthy', 'Soybean___healthy', 'Squash___Powdery_mildew', 'Strawberry___Leaf_scorch', 'Strawberry___healthy', 'Tomato___Bacterial_spot', 'Tomato___Early_blight', 'Tomato___Late_blight', 'Tomato___Leaf_Mold', 'Tomato___Septoria_leaf_spot', 'Tomato___Spider_mites Two-spotted_spider_mite', 'Tomato___Target_Spot', 'Tomato___Tomato_Yellow_Leaf_Curl_Virus', 'Tomato___Tomato_mosaic_virus', 'Tomato___healthy']
+2026-02-21 23:13:06,901 - ImageProcess - INFO - ✅ Preprocessing & Prefetching Complete!
+2026-02-21 23:13:06,902 - DataAugmentation - INFO - 🛠️ Initializing heavy data augmentation layers...
+2026-02-21 23:13:06,924 - DataAugmentation - INFO - Applying augmentation to the training pipeline...
+2026-02-21 23:13:07,110 - DataAugmentation - INFO - ✅ Data Augmentation successfully added to the training pipeline!
+2026-02-21 23:13:07,111 - MainPipeline - INFO - 🚀 Launching MLflow Lifecycle...
+2026-02-21 23:13:07,112 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-21 23:13:07,113 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-21 23:13:28,168 - FullPipeline - INFO - Started MLflow Run: ade3bc4478424909a56752f564032893
+2026-02-21 23:13:30,599 - FullPipeline - INFO - 🚀 Stage 1: Training the Head...
+2026-02-22 00:08:35,414 - DataLoad - INFO - --- System Test ---
+2026-02-22 00:08:35,415 - DataLoad - INFO - TensorFlow Version: 2.20.0
+2026-02-22 00:08:37,337 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-22 00:08:37,337 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-22 00:08:37,338 - DataLoad - INFO - --- Dataset Verification ---
+2026-02-22 00:08:37,340 - DataLoad - INFO - ✅ Success! Path exists.
+2026-02-22 00:08:37,341 - DataLoad - INFO - ✅ Total Classes Found: 38
+2026-02-22 00:08:37,341 - DataLoad - INFO - Sample Classes (First 10): ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight']
+2026-02-22 00:09:02,767 - MainPipeline - INFO - 🎬 Starting the Full Plant Disease MLOps Pipeline...
+2026-02-22 00:09:02,769 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-22 00:09:02,769 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-22 00:09:02,769 - MainPipeline - INFO - 📂 Splitting data...
+2026-02-22 00:09:02,769 - DataSplitting - INFO - Starting data splitting process...
+2026-02-22 00:09:02,781 - DataSplitting - INFO - Found 38 classes to split.
+2026-02-22 00:09:03,710 - DataSplitting - INFO - Successfully split class: Pepper,_bell___healthy | Train: 1182, Val: 148, Test: 148
+2026-02-22 00:09:04,096 - DataSplitting - INFO - Successfully split class: Apple___Apple_scab | Train: 504, Val: 63, Test: 63
+2026-02-22 00:09:04,478 - DataSplitting - INFO - Successfully split class: Apple___Black_rot | Train: 496, Val: 62, Test: 63
+2026-02-22 00:09:05,933 - DataSplitting - INFO - Successfully split class: Peach___Bacterial_spot | Train: 1837, Val: 230, Test: 230
+2026-02-22 00:09:06,999 - DataSplitting - INFO - Successfully split class: Tomato___Septoria_leaf_spot | Train: 1416, Val: 177, Test: 178
+2026-02-22 00:09:07,568 - DataSplitting - INFO - Successfully split class: Tomato___Early_blight | Train: 800, Val: 100, Test: 100
+2026-02-22 00:09:08,812 - DataSplitting - INFO - Successfully split class: Tomato___Bacterial_spot | Train: 1701, Val: 213, Test: 213
+2026-02-22 00:09:12,074 - DataSplitting - INFO - Successfully split class: Orange___Haunglongbing_(Citrus_greening) | Train: 4405, Val: 551, Test: 551
+2026-02-22 00:09:16,093 - DataSplitting - INFO - Successfully split class: Squash___Powdery_mildew | Train: 1468, Val: 183, Test: 184
+2026-02-22 00:09:16,888 - DataSplitting - INFO - Successfully split class: Grape___Esca_(Black_Measles) | Train: 1106, Val: 138, Test: 139
+2026-02-22 00:09:17,193 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot | Train: 410, Val: 51, Test: 52
+2026-02-22 00:09:17,435 - DataSplitting - INFO - Successfully split class: Peach___healthy | Train: 288, Val: 36, Test: 36
+2026-02-22 00:09:17,625 - DataSplitting - INFO - Successfully split class: Apple___Cedar_apple_rust | Train: 220, Val: 27, Test: 28
+2026-02-22 00:09:18,142 - DataSplitting - INFO - Successfully split class: Tomato___Leaf_Mold | Train: 761, Val: 95, Test: 96
+2026-02-22 00:09:18,954 - DataSplitting - INFO - Successfully split class: Blueberry___healthy | Train: 1201, Val: 150, Test: 151
+2026-02-22 00:09:19,487 - DataSplitting - INFO - Successfully split class: Pepper,_bell___Bacterial_spot | Train: 797, Val: 100, Test: 100
+2026-02-22 00:09:22,757 - DataSplitting - INFO - Successfully split class: Tomato___Tomato_Yellow_Leaf_Curl_Virus | Train: 4285, Val: 536, Test: 536
+2026-02-22 00:09:23,394 - DataSplitting - INFO - Successfully split class: Corn_(maize)___healthy | Train: 929, Val: 116, Test: 117
+2026-02-22 00:09:23,943 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Northern_Leaf_Blight | Train: 788, Val: 98, Test: 99
+2026-02-22 00:09:26,739 - DataSplitting - INFO - Successfully split class: Soybean___healthy | Train: 4072, Val: 509, Test: 509
+2026-02-22 00:09:27,277 - DataSplitting - INFO - Successfully split class: Potato___Late_blight | Train: 800, Val: 100, Test: 100
+2026-02-22 00:09:28,231 - DataSplitting - INFO - Successfully split class: Apple___healthy | Train: 1316, Val: 164, Test: 165
+2026-02-22 00:09:28,840 - DataSplitting - INFO - Successfully split class: Grape___Leaf_blight_(Isariopsis_Leaf_Spot) | Train: 860, Val: 108, Test: 108
+2026-02-22 00:09:29,621 - DataSplitting - INFO - Successfully split class: Tomato___Target_Spot | Train: 1123, Val: 140, Test: 141
+2026-02-22 00:09:30,510 - DataSplitting - INFO - Successfully split class: Tomato___healthy | Train: 1272, Val: 159, Test: 160
+2026-02-22 00:09:31,569 - DataSplitting - INFO - Successfully split class: Tomato___Late_blight | Train: 1527, Val: 191, Test: 191
+2026-02-22 00:09:31,834 - DataSplitting - INFO - Successfully split class: Strawberry___healthy | Train: 364, Val: 46, Test: 46
+2026-02-22 00:09:32,039 - DataSplitting - INFO - Successfully split class: Raspberry___healthy | Train: 296, Val: 37, Test: 38
+2026-02-22 00:09:32,690 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Common_rust_ | Train: 953, Val: 119, Test: 120
+2026-02-22 00:09:33,308 - DataSplitting - INFO - Successfully split class: Grape___Black_rot | Train: 944, Val: 118, Test: 118
+2026-02-22 00:09:33,537 - DataSplitting - INFO - Successfully split class: Grape___healthy | Train: 338, Val: 42, Test: 43
+2026-02-22 00:09:34,455 - DataSplitting - INFO - Successfully split class: Tomato___Spider_mites Two-spotted_spider_mite | Train: 1340, Val: 168, Test: 168
+2026-02-22 00:09:34,921 - DataSplitting - INFO - Successfully split class: Cherry_(including_sour)___healthy | Train: 683, Val: 85, Test: 86
+2026-02-22 00:09:35,547 - DataSplitting - INFO - Successfully split class: Cherry_(including_sour)___Powdery_mildew | Train: 841, Val: 105, Test: 106
+2026-02-22 00:09:35,641 - DataSplitting - INFO - Successfully split class: Potato___healthy | Train: 121, Val: 15, Test: 16
+2026-02-22 00:09:36,212 - DataSplitting - INFO - Successfully split class: Potato___Early_blight | Train: 800, Val: 100, Test: 100
+2026-02-22 00:09:36,422 - DataSplitting - INFO - Successfully split class: Tomato___Tomato_mosaic_virus | Train: 298, Val: 37, Test: 38
+2026-02-22 00:09:37,019 - DataSplitting - INFO - Successfully split class: Strawberry___Leaf_scorch | Train: 887, Val: 111, Test: 111
+2026-02-22 00:09:37,020 - DataSplitting - INFO - ✅ SUCCESS: Data splitting complete. (80/10/10 ratio)
+2026-02-22 00:09:37,020 - MainPipeline - INFO - ⚙️ Preprocessing images...
+2026-02-22 00:09:37,020 - ImageProcess - INFO - 🚀 Loading datasets from split directories...
+2026-02-22 00:09:41,412 - ImageProcess - INFO - ✅ Successfully loaded classes: ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight', 'Corn_(maize)___healthy', 'Grape___Black_rot', 'Grape___Esca_(Black_Measles)', 'Grape___Leaf_blight_(Isariopsis_Leaf_Spot)', 'Grape___healthy', 'Orange___Haunglongbing_(Citrus_greening)', 'Peach___Bacterial_spot', 'Peach___healthy', 'Pepper,_bell___Bacterial_spot', 'Pepper,_bell___healthy', 'Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy', 'Raspberry___healthy', 'Soybean___healthy', 'Squash___Powdery_mildew', 'Strawberry___Leaf_scorch', 'Strawberry___healthy', 'Tomato___Bacterial_spot', 'Tomato___Early_blight', 'Tomato___Late_blight', 'Tomato___Leaf_Mold', 'Tomato___Septoria_leaf_spot', 'Tomato___Spider_mites Two-spotted_spider_mite', 'Tomato___Target_Spot', 'Tomato___Tomato_Yellow_Leaf_Curl_Virus', 'Tomato___Tomato_mosaic_virus', 'Tomato___healthy']
+2026-02-22 00:09:41,493 - ImageProcess - INFO - ✅ Preprocessing & Prefetching Complete!
+2026-02-22 00:09:41,493 - DataAugmentation - INFO - 🛠️ Initializing heavy data augmentation layers...
+2026-02-22 00:09:41,512 - DataAugmentation - INFO - Applying augmentation to the training pipeline...
+2026-02-22 00:09:41,751 - DataAugmentation - INFO - ✅ Data Augmentation successfully added to the training pipeline!
+2026-02-22 00:09:41,752 - MainPipeline - INFO - 🚀 Launching MLflow Lifecycle...
+2026-02-22 00:09:41,752 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-22 00:09:41,753 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-22 00:09:55,278 - FullPipeline - INFO - Started MLflow Run: fb5a52d36a934334acb2cc27459908a0
+2026-02-22 00:09:57,659 - FullPipeline - INFO - 🚀 Stage 1: Training the Head...
+2026-02-22 00:30:53,633 - DataLoad - INFO - --- System Test ---
+2026-02-22 00:30:53,633 - DataLoad - INFO - TensorFlow Version: 2.20.0
+2026-02-22 00:30:55,049 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-22 00:30:55,049 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-22 00:30:55,049 - DataLoad - INFO - --- Dataset Verification ---
+2026-02-22 00:30:55,051 - DataLoad - INFO - ✅ Success! Path exists.
+2026-02-22 00:30:55,052 - DataLoad - INFO - ✅ Total Classes Found: 38
+2026-02-22 00:30:55,052 - DataLoad - INFO - Sample Classes (First 10): ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight']
+2026-02-22 00:31:04,031 - MainPipeline - INFO - 🎬 Starting the Full Plant Disease MLOps Pipeline...
+2026-02-22 00:31:04,033 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-22 00:31:04,033 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-22 00:31:04,033 - MainPipeline - INFO - 📂 Splitting data...
+2026-02-22 00:31:04,033 - DataSplitting - INFO - Starting data splitting process...
+2026-02-22 00:31:04,045 - DataSplitting - INFO - Found 38 classes to split.
+2026-02-22 00:31:07,423 - DataSplitting - INFO - Successfully split class: Pepper,_bell___healthy | Train: 1182, Val: 148, Test: 148
+2026-02-22 00:31:07,783 - DataSplitting - INFO - Successfully split class: Apple___Apple_scab | Train: 504, Val: 63, Test: 63
+2026-02-22 00:31:08,164 - DataSplitting - INFO - Successfully split class: Apple___Black_rot | Train: 496, Val: 62, Test: 63
+2026-02-22 00:31:09,643 - DataSplitting - INFO - Successfully split class: Peach___Bacterial_spot | Train: 1837, Val: 230, Test: 230
+2026-02-22 00:31:10,696 - DataSplitting - INFO - Successfully split class: Tomato___Septoria_leaf_spot | Train: 1416, Val: 177, Test: 178
+2026-02-22 00:31:11,311 - DataSplitting - INFO - Successfully split class: Tomato___Early_blight | Train: 800, Val: 100, Test: 100
+2026-02-22 00:31:12,562 - DataSplitting - INFO - Successfully split class: Tomato___Bacterial_spot | Train: 1701, Val: 213, Test: 213
+2026-02-22 00:31:16,169 - DataSplitting - INFO - Successfully split class: Orange___Haunglongbing_(Citrus_greening) | Train: 4405, Val: 551, Test: 551
+2026-02-22 00:31:17,321 - DataSplitting - INFO - Successfully split class: Squash___Powdery_mildew | Train: 1468, Val: 183, Test: 184
+2026-02-22 00:31:18,206 - DataSplitting - INFO - Successfully split class: Grape___Esca_(Black_Measles) | Train: 1106, Val: 138, Test: 139
+2026-02-22 00:31:18,498 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot | Train: 410, Val: 51, Test: 52
+2026-02-22 00:31:18,721 - DataSplitting - INFO - Successfully split class: Peach___healthy | Train: 288, Val: 36, Test: 36
+2026-02-22 00:31:18,882 - DataSplitting - INFO - Successfully split class: Apple___Cedar_apple_rust | Train: 220, Val: 27, Test: 28
+2026-02-22 00:31:19,452 - DataSplitting - INFO - Successfully split class: Tomato___Leaf_Mold | Train: 761, Val: 95, Test: 96
+2026-02-22 00:31:20,392 - DataSplitting - INFO - Successfully split class: Blueberry___healthy | Train: 1201, Val: 150, Test: 151
+2026-02-22 00:31:21,005 - DataSplitting - INFO - Successfully split class: Pepper,_bell___Bacterial_spot | Train: 797, Val: 100, Test: 100
+2026-02-22 00:31:24,112 - DataSplitting - INFO - Successfully split class: Tomato___Tomato_Yellow_Leaf_Curl_Virus | Train: 4285, Val: 536, Test: 536
+2026-02-22 00:31:24,774 - DataSplitting - INFO - Successfully split class: Corn_(maize)___healthy | Train: 929, Val: 116, Test: 117
+2026-02-22 00:31:25,314 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Northern_Leaf_Blight | Train: 788, Val: 98, Test: 99
+2026-02-22 00:31:28,474 - DataSplitting - INFO - Successfully split class: Soybean___healthy | Train: 4072, Val: 509, Test: 509
+2026-02-22 00:31:29,087 - DataSplitting - INFO - Successfully split class: Potato___Late_blight | Train: 800, Val: 100, Test: 100
+2026-02-22 00:31:30,055 - DataSplitting - INFO - Successfully split class: Apple___healthy | Train: 1316, Val: 164, Test: 165
+2026-02-22 00:31:30,694 - DataSplitting - INFO - Successfully split class: Grape___Leaf_blight_(Isariopsis_Leaf_Spot) | Train: 860, Val: 108, Test: 108
+2026-02-22 00:31:31,524 - DataSplitting - INFO - Successfully split class: Tomato___Target_Spot | Train: 1123, Val: 140, Test: 141
+2026-02-22 00:31:32,484 - DataSplitting - INFO - Successfully split class: Tomato___healthy | Train: 1272, Val: 159, Test: 160
+2026-02-22 00:31:33,582 - DataSplitting - INFO - Successfully split class: Tomato___Late_blight | Train: 1527, Val: 191, Test: 191
+2026-02-22 00:31:33,845 - DataSplitting - INFO - Successfully split class: Strawberry___healthy | Train: 364, Val: 46, Test: 46
+2026-02-22 00:31:34,078 - DataSplitting - INFO - Successfully split class: Raspberry___healthy | Train: 296, Val: 37, Test: 38
+2026-02-22 00:31:34,767 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Common_rust_ | Train: 953, Val: 119, Test: 120
+2026-02-22 00:31:35,485 - DataSplitting - INFO - Successfully split class: Grape___Black_rot | Train: 944, Val: 118, Test: 118
+2026-02-22 00:31:35,723 - DataSplitting - INFO - Successfully split class: Grape___healthy | Train: 338, Val: 42, Test: 43
+2026-02-22 00:31:36,724 - DataSplitting - INFO - Successfully split class: Tomato___Spider_mites Two-spotted_spider_mite | Train: 1340, Val: 168, Test: 168
+2026-02-22 00:31:37,205 - DataSplitting - INFO - Successfully split class: Cherry_(including_sour)___healthy | Train: 683, Val: 85, Test: 86
+2026-02-22 00:31:37,829 - DataSplitting - INFO - Successfully split class: Cherry_(including_sour)___Powdery_mildew | Train: 841, Val: 105, Test: 106
+2026-02-22 00:31:37,915 - DataSplitting - INFO - Successfully split class: Potato___healthy | Train: 121, Val: 15, Test: 16
+2026-02-22 00:31:38,540 - DataSplitting - INFO - Successfully split class: Potato___Early_blight | Train: 800, Val: 100, Test: 100
+2026-02-22 00:31:38,772 - DataSplitting - INFO - Successfully split class: Tomato___Tomato_mosaic_virus | Train: 298, Val: 37, Test: 38
+2026-02-22 00:31:42,226 - DataSplitting - INFO - Successfully split class: Strawberry___Leaf_scorch | Train: 887, Val: 111, Test: 111
+2026-02-22 00:31:42,226 - DataSplitting - INFO - ✅ SUCCESS: Data splitting complete. (80/10/10 ratio)
+2026-02-22 00:31:42,226 - MainPipeline - INFO - ⚙️ Preprocessing images...
+2026-02-22 00:31:42,227 - ImageProcess - INFO - 🚀 Loading datasets from split directories...
+2026-02-22 00:31:46,800 - ImageProcess - INFO - ✅ Successfully loaded classes: ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight', 'Corn_(maize)___healthy', 'Grape___Black_rot', 'Grape___Esca_(Black_Measles)', 'Grape___Leaf_blight_(Isariopsis_Leaf_Spot)', 'Grape___healthy', 'Orange___Haunglongbing_(Citrus_greening)', 'Peach___Bacterial_spot', 'Peach___healthy', 'Pepper,_bell___Bacterial_spot', 'Pepper,_bell___healthy', 'Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy', 'Raspberry___healthy', 'Soybean___healthy', 'Squash___Powdery_mildew', 'Strawberry___Leaf_scorch', 'Strawberry___healthy', 'Tomato___Bacterial_spot', 'Tomato___Early_blight', 'Tomato___Late_blight', 'Tomato___Leaf_Mold', 'Tomato___Septoria_leaf_spot', 'Tomato___Spider_mites Two-spotted_spider_mite', 'Tomato___Target_Spot', 'Tomato___Tomato_Yellow_Leaf_Curl_Virus', 'Tomato___Tomato_mosaic_virus', 'Tomato___healthy']
+2026-02-22 00:31:46,879 - ImageProcess - INFO - ✅ Preprocessing & Prefetching Complete!
+2026-02-22 00:31:46,880 - DataAugmentation - INFO - 🛠️ Initializing heavy data augmentation layers...
+2026-02-22 00:31:46,900 - DataAugmentation - INFO - Applying augmentation to the training pipeline...
+2026-02-22 00:31:47,111 - DataAugmentation - INFO - ✅ Data Augmentation successfully added to the training pipeline!
+2026-02-22 00:31:47,112 - MainPipeline - INFO - 🚀 Launching MLflow Lifecycle...
+2026-02-22 00:31:47,112 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-22 00:31:47,114 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-22 00:31:51,899 - FullPipeline - INFO - Started MLflow Run: f0656de9871d44529c0ead31cd55173d
+2026-02-22 00:31:54,170 - FullPipeline - INFO - 🚀 Stage 1: Training the Head...
+2026-02-22 01:07:12,437 - FullPipeline - INFO - 🔓 Stage 2: Unfreezing last 50 layers...
+2026-02-22 05:31:19,653 - DataLoad - INFO - --- System Test ---
+2026-02-22 05:31:19,654 - DataLoad - INFO - TensorFlow Version: 2.20.0
+2026-02-22 05:31:21,517 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-22 05:31:21,517 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-22 05:31:21,517 - DataLoad - INFO - --- Dataset Verification ---
+2026-02-22 05:31:21,521 - DataLoad - INFO - ✅ Success! Path exists.
+2026-02-22 05:31:21,522 - DataLoad - INFO - ✅ Total Classes Found: 38
+2026-02-22 05:31:21,522 - DataLoad - INFO - Sample Classes (First 10): ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight']
+2026-02-22 05:31:29,685 - FullPipeline - INFO - ✅ Production Model Loaded into Wrapper.
+2026-02-22 05:31:43,591 - FullPipeline - INFO - 📦 Step 1: Registering model 'PlantModel_Prod'...
+2026-02-22 05:31:44,063 - FullPipeline - INFO - 🧪 Step 2: Transitioning version 1 to STAGING...
+2026-02-22 05:31:44,104 - FullPipeline - INFO - ⚖️ Step 3: Checking Quality Gate (Target: 82.0%)...
+2026-02-22 05:31:44,105 - FullPipeline - INFO - ✅ Quality Gate Passed! (Accuracy: 0.8465)
+2026-02-22 05:31:44,105 - FullPipeline - INFO - 🚀 Step 4: Promoting version 1 to PRODUCTION...
+2026-02-22 05:31:44,136 - FullPipeline - INFO - 🌟 Model version 1 is now LIVE in Production.
+2026-02-22 05:31:44,174 - MainPipeline - INFO - ✅ Pipeline Finished! Run ID: f0656de9871d44529c0ead31cd55173d
+2026-02-22 05:31:44,174 - MainPipeline - INFO - 🔗 Run 'mlflow ui' to see results.
+2026-02-23 08:42:24,509 - DataLoad - INFO - --- System Test ---
+2026-02-23 08:42:24,510 - DataLoad - INFO - TensorFlow Version: 2.20.0
+2026-02-23 08:42:26,302 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-23 08:42:26,302 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-23 08:42:26,303 - DataLoad - INFO - --- Dataset Verification ---
+2026-02-23 08:42:26,305 - DataLoad - INFO - ✅ Success! Path exists.
+2026-02-23 08:42:26,305 - DataLoad - INFO - ✅ Total Classes Found: 38
+2026-02-23 08:42:26,305 - DataLoad - INFO - Sample Classes (First 10): ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight']
+2026-02-23 08:42:51,972 - MainPipeline - INFO - 🎬 Starting the Full Plant Disease MLOps Pipeline...
+2026-02-23 08:42:51,973 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-23 08:42:51,973 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-23 08:42:51,974 - MainPipeline - INFO - 📂 Splitting data...
+2026-02-23 08:42:51,974 - DataSplitting - INFO - Starting data splitting process...
+2026-02-23 08:42:51,989 - DataSplitting - INFO - Found 38 classes to split.
+2026-02-23 08:42:52,848 - DataSplitting - INFO - Successfully split class: Pepper,_bell___healthy | Train: 1182, Val: 148, Test: 148
+2026-02-23 08:42:53,211 - DataSplitting - INFO - Successfully split class: Apple___Apple_scab | Train: 504, Val: 63, Test: 63
+2026-02-23 08:42:53,573 - DataSplitting - INFO - Successfully split class: Apple___Black_rot | Train: 496, Val: 62, Test: 63
+2026-02-23 08:42:54,876 - DataSplitting - INFO - Successfully split class: Peach___Bacterial_spot | Train: 1837, Val: 230, Test: 230
+2026-02-23 08:42:55,858 - DataSplitting - INFO - Successfully split class: Tomato___Septoria_leaf_spot | Train: 1416, Val: 177, Test: 178
+2026-02-23 08:42:56,450 - DataSplitting - INFO - Successfully split class: Tomato___Early_blight | Train: 800, Val: 100, Test: 100
+2026-02-23 08:42:57,640 - DataSplitting - INFO - Successfully split class: Tomato___Bacterial_spot | Train: 1701, Val: 213, Test: 213
+2026-02-23 08:43:00,735 - DataSplitting - INFO - Successfully split class: Orange___Haunglongbing_(Citrus_greening) | Train: 4405, Val: 551, Test: 551
+2026-02-23 08:43:01,737 - DataSplitting - INFO - Successfully split class: Squash___Powdery_mildew | Train: 1468, Val: 183, Test: 184
+2026-02-23 08:43:02,586 - DataSplitting - INFO - Successfully split class: Grape___Esca_(Black_Measles) | Train: 1106, Val: 138, Test: 139
+2026-02-23 08:43:02,920 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot | Train: 410, Val: 51, Test: 52
+2026-02-23 08:43:03,138 - DataSplitting - INFO - Successfully split class: Peach___healthy | Train: 288, Val: 36, Test: 36
+2026-02-23 08:43:03,294 - DataSplitting - INFO - Successfully split class: Apple___Cedar_apple_rust | Train: 220, Val: 27, Test: 28
+2026-02-23 08:43:03,826 - DataSplitting - INFO - Successfully split class: Tomato___Leaf_Mold | Train: 761, Val: 95, Test: 96
+2026-02-23 08:43:04,671 - DataSplitting - INFO - Successfully split class: Blueberry___healthy | Train: 1201, Val: 150, Test: 151
+2026-02-23 08:43:05,202 - DataSplitting - INFO - Successfully split class: Pepper,_bell___Bacterial_spot | Train: 797, Val: 100, Test: 100
+2026-02-23 08:43:08,223 - DataSplitting - INFO - Successfully split class: Tomato___Tomato_Yellow_Leaf_Curl_Virus | Train: 4285, Val: 536, Test: 536
+2026-02-23 08:43:08,845 - DataSplitting - INFO - Successfully split class: Corn_(maize)___healthy | Train: 929, Val: 116, Test: 117
+2026-02-23 08:43:09,387 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Northern_Leaf_Blight | Train: 788, Val: 98, Test: 99
+2026-02-23 08:43:12,268 - DataSplitting - INFO - Successfully split class: Soybean___healthy | Train: 4072, Val: 509, Test: 509
+2026-02-23 08:43:12,846 - DataSplitting - INFO - Successfully split class: Potato___Late_blight | Train: 800, Val: 100, Test: 100
+2026-02-23 08:43:13,818 - DataSplitting - INFO - Successfully split class: Apple___healthy | Train: 1316, Val: 164, Test: 165
+2026-02-23 08:43:14,468 - DataSplitting - INFO - Successfully split class: Grape___Leaf_blight_(Isariopsis_Leaf_Spot) | Train: 860, Val: 108, Test: 108
+2026-02-23 08:43:15,314 - DataSplitting - INFO - Successfully split class: Tomato___Target_Spot | Train: 1123, Val: 140, Test: 141
+2026-02-23 08:43:16,229 - DataSplitting - INFO - Successfully split class: Tomato___healthy | Train: 1272, Val: 159, Test: 160
+2026-02-23 08:43:17,301 - DataSplitting - INFO - Successfully split class: Tomato___Late_blight | Train: 1527, Val: 191, Test: 191
+2026-02-23 08:43:17,554 - DataSplitting - INFO - Successfully split class: Strawberry___healthy | Train: 364, Val: 46, Test: 46
+2026-02-23 08:43:17,764 - DataSplitting - INFO - Successfully split class: Raspberry___healthy | Train: 296, Val: 37, Test: 38
+2026-02-23 08:43:18,460 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Common_rust_ | Train: 953, Val: 119, Test: 120
+2026-02-23 08:43:19,165 - DataSplitting - INFO - Successfully split class: Grape___Black_rot | Train: 944, Val: 118, Test: 118
+2026-02-23 08:43:19,434 - DataSplitting - INFO - Successfully split class: Grape___healthy | Train: 338, Val: 42, Test: 43
+2026-02-23 08:43:20,467 - DataSplitting - INFO - Successfully split class: Tomato___Spider_mites Two-spotted_spider_mite | Train: 1340, Val: 168, Test: 168
+2026-02-23 08:43:20,952 - DataSplitting - INFO - Successfully split class: Cherry_(including_sour)___healthy | Train: 683, Val: 85, Test: 86
+2026-02-23 08:43:21,525 - DataSplitting - INFO - Successfully split class: Cherry_(including_sour)___Powdery_mildew | Train: 841, Val: 105, Test: 106
+2026-02-23 08:43:21,610 - DataSplitting - INFO - Successfully split class: Potato___healthy | Train: 121, Val: 15, Test: 16
+2026-02-23 08:43:22,155 - DataSplitting - INFO - Successfully split class: Potato___Early_blight | Train: 800, Val: 100, Test: 100
+2026-02-23 08:43:22,372 - DataSplitting - INFO - Successfully split class: Tomato___Tomato_mosaic_virus | Train: 298, Val: 37, Test: 38
+2026-02-23 08:43:23,091 - DataSplitting - INFO - Successfully split class: Strawberry___Leaf_scorch | Train: 887, Val: 111, Test: 111
+2026-02-23 08:43:23,091 - DataSplitting - INFO - ✅ SUCCESS: Data splitting complete. (80/10/10 ratio)
+2026-02-23 08:43:23,092 - MainPipeline - INFO - ⚙️ Preprocessing images...
+2026-02-23 08:43:23,092 - ImageProcess - INFO - 🚀 Loading datasets from split directories...
+2026-02-23 08:43:27,710 - ImageProcess - INFO - ✅ Successfully loaded classes: ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight', 'Corn_(maize)___healthy', 'Grape___Black_rot', 'Grape___Esca_(Black_Measles)', 'Grape___Leaf_blight_(Isariopsis_Leaf_Spot)', 'Grape___healthy', 'Orange___Haunglongbing_(Citrus_greening)', 'Peach___Bacterial_spot', 'Peach___healthy', 'Pepper,_bell___Bacterial_spot', 'Pepper,_bell___healthy', 'Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy', 'Raspberry___healthy', 'Soybean___healthy', 'Squash___Powdery_mildew', 'Strawberry___Leaf_scorch', 'Strawberry___healthy', 'Tomato___Bacterial_spot', 'Tomato___Early_blight', 'Tomato___Late_blight', 'Tomato___Leaf_Mold', 'Tomato___Septoria_leaf_spot', 'Tomato___Spider_mites Two-spotted_spider_mite', 'Tomato___Target_Spot', 'Tomato___Tomato_Yellow_Leaf_Curl_Virus', 'Tomato___Tomato_mosaic_virus', 'Tomato___healthy']
+2026-02-23 08:43:27,787 - ImageProcess - INFO - ✅ Preprocessing & Prefetching Complete!
+2026-02-23 08:43:27,788 - DataAugmentation - INFO - 🛠️ Initializing heavy data augmentation layers...
+2026-02-23 08:43:27,803 - DataAugmentation - INFO - Applying augmentation to the training pipeline...
+2026-02-23 08:43:28,046 - DataAugmentation - INFO - ✅ Data Augmentation successfully added to the training pipeline!
+2026-02-23 08:43:28,047 - MainPipeline - INFO - 🚀 Launching MLflow Lifecycle...
+2026-02-23 08:43:28,048 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-23 08:43:28,048 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-23 08:43:39,277 - FullPipeline - INFO - Started MLflow Run: 46e489e5970a4ea8b5d1bb6005fdf0e8
+2026-02-23 08:43:42,076 - FullPipeline - INFO - 🚀 Stage 1: Training the Head...
+2026-02-23 09:32:52,120 - FullPipeline - INFO - 🔓 Stage 2: Unfreezing last 50 layers...
+2026-02-23 14:32:40,639 - DataLoad - INFO - --- System Test ---
+2026-02-23 14:32:40,639 - DataLoad - INFO - TensorFlow Version: 2.20.0
+2026-02-23 14:32:42,369 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-23 14:32:42,369 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-23 14:32:42,370 - DataLoad - INFO - --- Dataset Verification ---
+2026-02-23 14:32:42,372 - DataLoad - INFO - ✅ Success! Path exists.
+2026-02-23 14:32:42,373 - DataLoad - INFO - ✅ Total Classes Found: 38
+2026-02-23 14:32:42,373 - DataLoad - INFO - Sample Classes (First 10): ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight']
+2026-02-23 14:32:47,048 - FullPipeline - INFO - ✅ Production Model Loaded into Wrapper.
+2026-02-23 14:32:59,783 - FullPipeline - INFO - 📦 Step 1: Registering model 'PlantModel_Prod'...
+2026-02-23 14:33:00,230 - FullPipeline - INFO - 🧪 Step 2: Transitioning version 2 to STAGING...
+2026-02-23 14:33:00,270 - FullPipeline - INFO - ⚖️ Step 3: Checking Quality Gate (Target: 82.0%)...
+2026-02-23 14:33:00,271 - FullPipeline - WARNING - ⚠️ Quality Gate Failed (Accuracy: 0.7913).
+2026-02-23 14:33:00,271 - FullPipeline - WARNING - 🛑 Model version 2 will remain in STAGING for review.
+2026-02-23 14:33:00,309 - MainPipeline - INFO - ✅ Pipeline Finished! Run ID: 46e489e5970a4ea8b5d1bb6005fdf0e8
+2026-02-23 14:33:00,310 - MainPipeline - INFO - 🔗 Run 'mlflow ui' to see results.
+2026-02-23 14:47:59,447 - DataLoad - INFO - --- System Test ---
+2026-02-23 14:47:59,448 - DataLoad - INFO - TensorFlow Version: 2.20.0
+2026-02-23 14:48:00,433 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-23 14:48:00,434 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-23 14:48:00,434 - DataLoad - INFO - --- Dataset Verification ---
+2026-02-23 14:48:00,435 - DataLoad - INFO - ✅ Success! Path exists.
+2026-02-23 14:48:00,435 - DataLoad - INFO - ✅ Total Classes Found: 38
+2026-02-23 14:48:00,436 - DataLoad - INFO - Sample Classes (First 10): ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight']
+2026-02-23 14:50:14,849 - DataLoad - INFO - --- System Test ---
+2026-02-23 14:50:14,850 - DataLoad - INFO - TensorFlow Version: 2.20.0
+2026-02-23 14:50:15,802 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-23 14:50:15,802 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-23 14:50:15,802 - DataLoad - INFO - --- Dataset Verification ---
+2026-02-23 14:50:15,805 - DataLoad - INFO - ✅ Success! Path exists.
+2026-02-23 14:50:15,805 - DataLoad - INFO - ✅ Total Classes Found: 38
+2026-02-23 14:50:15,806 - DataLoad - INFO - Sample Classes (First 10): ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight']
+2026-02-23 14:50:24,571 - MainPipeline - INFO - 🎬 Starting the Full Plant Disease MLOps Pipeline...
+2026-02-23 14:50:24,573 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-23 14:50:24,573 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-23 14:50:24,573 - MainPipeline - INFO - 📂 Splitting data...
+2026-02-23 14:50:24,574 - DataSplitting - INFO - Starting data splitting process...
+2026-02-23 14:50:24,600 - DataSplitting - INFO - Found 38 classes to split.
+2026-02-23 14:50:25,502 - DataSplitting - INFO - Successfully split class: Pepper,_bell___healthy | Train: 1182, Val: 148, Test: 148
+2026-02-23 14:50:25,868 - DataSplitting - INFO - Successfully split class: Apple___Apple_scab | Train: 504, Val: 63, Test: 63
+2026-02-23 14:50:26,240 - DataSplitting - INFO - Successfully split class: Apple___Black_rot | Train: 496, Val: 62, Test: 63
+2026-02-23 14:50:27,517 - DataSplitting - INFO - Successfully split class: Peach___Bacterial_spot | Train: 1837, Val: 230, Test: 230
+2026-02-23 14:50:28,461 - DataSplitting - INFO - Successfully split class: Tomato___Septoria_leaf_spot | Train: 1416, Val: 177, Test: 178
+2026-02-23 14:50:29,027 - DataSplitting - INFO - Successfully split class: Tomato___Early_blight | Train: 800, Val: 100, Test: 100
+2026-02-23 14:50:30,271 - DataSplitting - INFO - Successfully split class: Tomato___Bacterial_spot | Train: 1701, Val: 213, Test: 213
+2026-02-23 14:50:33,582 - DataSplitting - INFO - Successfully split class: Orange___Haunglongbing_(Citrus_greening) | Train: 4405, Val: 551, Test: 551
+2026-02-23 14:50:34,748 - DataSplitting - INFO - Successfully split class: Squash___Powdery_mildew | Train: 1468, Val: 183, Test: 184
+2026-02-23 14:50:35,622 - DataSplitting - INFO - Successfully split class: Grape___Esca_(Black_Measles) | Train: 1106, Val: 138, Test: 139
+2026-02-23 14:50:35,926 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot | Train: 410, Val: 51, Test: 52
+2026-02-23 14:50:36,123 - DataSplitting - INFO - Successfully split class: Peach___healthy | Train: 288, Val: 36, Test: 36
+2026-02-23 14:50:36,277 - DataSplitting - INFO - Successfully split class: Apple___Cedar_apple_rust | Train: 220, Val: 27, Test: 28
+2026-02-23 14:50:36,789 - DataSplitting - INFO - Successfully split class: Tomato___Leaf_Mold | Train: 761, Val: 95, Test: 96
+2026-02-23 14:50:37,660 - DataSplitting - INFO - Successfully split class: Blueberry___healthy | Train: 1201, Val: 150, Test: 151
+2026-02-23 14:50:38,194 - DataSplitting - INFO - Successfully split class: Pepper,_bell___Bacterial_spot | Train: 797, Val: 100, Test: 100
+2026-02-23 14:50:44,403 - DataSplitting - INFO - Successfully split class: Tomato___Tomato_Yellow_Leaf_Curl_Virus | Train: 4285, Val: 536, Test: 536
+2026-02-23 14:50:45,085 - DataSplitting - INFO - Successfully split class: Corn_(maize)___healthy | Train: 929, Val: 116, Test: 117
+2026-02-23 14:50:45,671 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Northern_Leaf_Blight | Train: 788, Val: 98, Test: 99
+2026-02-23 14:50:48,658 - DataSplitting - INFO - Successfully split class: Soybean___healthy | Train: 4072, Val: 509, Test: 509
+2026-02-23 14:50:49,226 - DataSplitting - INFO - Successfully split class: Potato___Late_blight | Train: 800, Val: 100, Test: 100
+2026-02-23 14:50:50,148 - DataSplitting - INFO - Successfully split class: Apple___healthy | Train: 1316, Val: 164, Test: 165
+2026-02-23 14:50:50,689 - DataSplitting - INFO - Successfully split class: Grape___Leaf_blight_(Isariopsis_Leaf_Spot) | Train: 860, Val: 108, Test: 108
+2026-02-23 14:50:51,393 - DataSplitting - INFO - Successfully split class: Tomato___Target_Spot | Train: 1123, Val: 140, Test: 141
+2026-02-23 14:50:52,256 - DataSplitting - INFO - Successfully split class: Tomato___healthy | Train: 1272, Val: 159, Test: 160
+2026-02-23 14:50:53,292 - DataSplitting - INFO - Successfully split class: Tomato___Late_blight | Train: 1527, Val: 191, Test: 191
+2026-02-23 14:50:53,528 - DataSplitting - INFO - Successfully split class: Strawberry___healthy | Train: 364, Val: 46, Test: 46
+2026-02-23 14:50:53,725 - DataSplitting - INFO - Successfully split class: Raspberry___healthy | Train: 296, Val: 37, Test: 38
+2026-02-23 14:50:54,325 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Common_rust_ | Train: 953, Val: 119, Test: 120
+2026-02-23 14:50:54,937 - DataSplitting - INFO - Successfully split class: Grape___Black_rot | Train: 944, Val: 118, Test: 118
+2026-02-23 14:50:55,159 - DataSplitting - INFO - Successfully split class: Grape___healthy | Train: 338, Val: 42, Test: 43
+2026-02-23 14:50:56,100 - DataSplitting - INFO - Successfully split class: Tomato___Spider_mites Two-spotted_spider_mite | Train: 1340, Val: 168, Test: 168
+2026-02-23 14:50:56,608 - DataSplitting - INFO - Successfully split class: Cherry_(including_sour)___healthy | Train: 683, Val: 85, Test: 86
+2026-02-23 14:50:57,174 - DataSplitting - INFO - Successfully split class: Cherry_(including_sour)___Powdery_mildew | Train: 841, Val: 105, Test: 106
+2026-02-23 14:50:57,248 - DataSplitting - INFO - Successfully split class: Potato___healthy | Train: 121, Val: 15, Test: 16
+2026-02-23 14:50:57,881 - DataSplitting - INFO - Successfully split class: Potato___Early_blight | Train: 800, Val: 100, Test: 100
+2026-02-23 14:50:58,116 - DataSplitting - INFO - Successfully split class: Tomato___Tomato_mosaic_virus | Train: 298, Val: 37, Test: 38
+2026-02-23 14:50:58,833 - DataSplitting - INFO - Successfully split class: Strawberry___Leaf_scorch | Train: 887, Val: 111, Test: 111
+2026-02-23 14:50:58,833 - DataSplitting - INFO - ✅ SUCCESS: Data splitting complete. (80/10/10 ratio)
+2026-02-23 14:50:58,834 - MainPipeline - INFO - ⚙️ Preprocessing images...
+2026-02-23 14:50:58,834 - ImageProcess - INFO - 🚀 Loading datasets from split directories...
+2026-02-23 14:51:03,334 - ImageProcess - INFO - ✅ Successfully loaded classes: ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight', 'Corn_(maize)___healthy', 'Grape___Black_rot', 'Grape___Esca_(Black_Measles)', 'Grape___Leaf_blight_(Isariopsis_Leaf_Spot)', 'Grape___healthy', 'Orange___Haunglongbing_(Citrus_greening)', 'Peach___Bacterial_spot', 'Peach___healthy', 'Pepper,_bell___Bacterial_spot', 'Pepper,_bell___healthy', 'Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy', 'Raspberry___healthy', 'Soybean___healthy', 'Squash___Powdery_mildew', 'Strawberry___Leaf_scorch', 'Strawberry___healthy', 'Tomato___Bacterial_spot', 'Tomato___Early_blight', 'Tomato___Late_blight', 'Tomato___Leaf_Mold', 'Tomato___Septoria_leaf_spot', 'Tomato___Spider_mites Two-spotted_spider_mite', 'Tomato___Target_Spot', 'Tomato___Tomato_Yellow_Leaf_Curl_Virus', 'Tomato___Tomato_mosaic_virus', 'Tomato___healthy']
+2026-02-23 14:51:03,410 - ImageProcess - INFO - ✅ Preprocessing & Prefetching Complete!
+2026-02-23 14:51:03,410 - DataAugmentation - INFO - 🛠️ Initializing heavy data augmentation layers...
+2026-02-23 14:51:03,430 - DataAugmentation - INFO - Applying augmentation to the training pipeline...
+2026-02-23 14:51:03,642 - DataAugmentation - INFO - ✅ Data Augmentation successfully added to the training pipeline!
+2026-02-23 14:51:03,642 - MainPipeline - INFO - 🚀 Launching MLflow Lifecycle...
+2026-02-23 14:51:03,643 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-23 14:51:03,643 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-23 14:51:08,303 - FullPipeline - INFO - Started MLflow Run: 519f57c8b2d0476e9be45a42292ecca3
+2026-02-23 14:51:10,632 - FullPipeline - INFO - 🚀 Stage 1: Training the Head...
+2026-02-23 15:09:12,952 - DataLoad - INFO - --- System Test ---
+2026-02-23 15:09:12,953 - DataLoad - INFO - TensorFlow Version: 2.20.0
+2026-02-23 15:09:14,412 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-23 15:09:14,412 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-23 15:09:14,413 - DataLoad - INFO - --- Dataset Verification ---
+2026-02-23 15:09:14,415 - DataLoad - INFO - ✅ Success! Path exists.
+2026-02-23 15:09:14,415 - DataLoad - INFO - ✅ Total Classes Found: 38
+2026-02-23 15:09:14,415 - DataLoad - INFO - Sample Classes (First 10): ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight']
+2026-02-23 15:09:23,789 - MainPipeline - INFO - 🎬 Starting the Full Plant Disease MLOps Pipeline...
+2026-02-23 15:09:23,790 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-23 15:09:23,790 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-23 15:09:23,791 - MainPipeline - INFO - 📂 Splitting data...
+2026-02-23 15:09:23,791 - DataSplitting - INFO - Starting data splitting process...
+2026-02-23 15:09:23,810 - DataSplitting - INFO - Found 38 classes to split.
+2026-02-23 15:09:24,633 - DataSplitting - INFO - Successfully split class: Pepper,_bell___healthy | Train: 1182, Val: 148, Test: 148
+2026-02-23 15:09:24,990 - DataSplitting - INFO - Successfully split class: Apple___Apple_scab | Train: 504, Val: 63, Test: 63
+2026-02-23 15:09:25,341 - DataSplitting - INFO - Successfully split class: Apple___Black_rot | Train: 496, Val: 62, Test: 63
+2026-02-23 15:09:26,545 - DataSplitting - INFO - Successfully split class: Peach___Bacterial_spot | Train: 1837, Val: 230, Test: 230
+2026-02-23 15:09:27,403 - DataSplitting - INFO - Successfully split class: Tomato___Septoria_leaf_spot | Train: 1416, Val: 177, Test: 178
+2026-02-23 15:09:27,913 - DataSplitting - INFO - Successfully split class: Tomato___Early_blight | Train: 800, Val: 100, Test: 100
+2026-02-23 15:09:28,993 - DataSplitting - INFO - Successfully split class: Tomato___Bacterial_spot | Train: 1701, Val: 213, Test: 213
+2026-02-23 15:09:31,848 - DataSplitting - INFO - Successfully split class: Orange___Haunglongbing_(Citrus_greening) | Train: 4405, Val: 551, Test: 551
+2026-02-23 15:11:35,421 - DataLoad - INFO - --- System Test ---
+2026-02-23 15:11:35,421 - DataLoad - INFO - TensorFlow Version: 2.20.0
+2026-02-23 15:11:36,237 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-23 15:11:36,238 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-23 15:11:36,238 - DataLoad - INFO - --- Dataset Verification ---
+2026-02-23 15:11:36,243 - DataLoad - INFO - ✅ Success! Path exists.
+2026-02-23 15:11:36,243 - DataLoad - INFO - ✅ Total Classes Found: 38
+2026-02-23 15:11:36,244 - DataLoad - INFO - Sample Classes (First 10): ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight']
+2026-02-23 15:11:45,235 - MainPipeline - INFO - 🎬 Starting the Full Plant Disease MLOps Pipeline...
+2026-02-23 15:11:45,236 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-23 15:11:45,236 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-23 15:11:45,236 - MainPipeline - INFO - 📂 Splitting data...
+2026-02-23 15:11:45,237 - DataSplitting - INFO - Starting data splitting process...
+2026-02-23 15:11:45,255 - DataSplitting - INFO - Found 38 classes to split.
+2026-02-23 15:11:45,966 - DataSplitting - INFO - Successfully split class: Pepper,_bell___healthy | Train: 1182, Val: 148, Test: 148
+2026-02-23 15:11:46,256 - DataSplitting - INFO - Successfully split class: Apple___Apple_scab | Train: 504, Val: 63, Test: 63
+2026-02-23 15:11:46,536 - DataSplitting - INFO - Successfully split class: Apple___Black_rot | Train: 496, Val: 62, Test: 63
+2026-02-23 15:11:47,584 - DataSplitting - INFO - Successfully split class: Peach___Bacterial_spot | Train: 1837, Val: 230, Test: 230
+2026-02-23 15:11:48,416 - DataSplitting - INFO - Successfully split class: Tomato___Septoria_leaf_spot | Train: 1416, Val: 177, Test: 178
+2026-02-23 15:11:48,974 - DataSplitting - INFO - Successfully split class: Tomato___Early_blight | Train: 800, Val: 100, Test: 100
+2026-02-23 15:23:34,708 - DataLoad - INFO - --- System Test ---
+2026-02-23 15:23:34,709 - DataLoad - INFO - TensorFlow Version: 2.20.0
+2026-02-23 15:23:36,601 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-23 15:23:36,602 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-23 15:23:36,602 - DataLoad - INFO - --- Dataset Verification ---
+2026-02-23 15:23:36,604 - DataLoad - INFO - ✅ Success! Path exists.
+2026-02-23 15:23:36,604 - DataLoad - INFO - ✅ Total Classes Found: 38
+2026-02-23 15:23:36,605 - DataLoad - INFO - Sample Classes (First 10): ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight']
+2026-02-23 15:24:06,014 - MainPipeline - INFO - 🎬 Starting the Full Plant Disease MLOps Pipeline...
+2026-02-23 15:24:06,015 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-23 15:24:06,015 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-23 15:24:06,015 - MainPipeline - INFO - 📂 Splitting data...
+2026-02-23 15:24:06,016 - DataSplitting - INFO - Starting data splitting process...
+2026-02-23 15:24:06,027 - DataSplitting - INFO - Found 38 classes to split.
+2026-02-23 15:24:06,963 - DataSplitting - INFO - Successfully split class: Pepper,_bell___healthy | Train: 1182, Val: 148, Test: 148
+2026-02-23 15:24:07,373 - DataSplitting - INFO - Successfully split class: Apple___Apple_scab | Train: 504, Val: 63, Test: 63
+2026-02-23 15:24:07,760 - DataSplitting - INFO - Successfully split class: Apple___Black_rot | Train: 496, Val: 62, Test: 63
+2026-02-23 15:24:09,262 - DataSplitting - INFO - Successfully split class: Peach___Bacterial_spot | Train: 1837, Val: 230, Test: 230
+2026-02-23 15:24:10,212 - DataSplitting - INFO - Successfully split class: Tomato___Septoria_leaf_spot | Train: 1416, Val: 177, Test: 178
+2026-02-23 15:24:10,799 - DataSplitting - INFO - Successfully split class: Tomato___Early_blight | Train: 800, Val: 100, Test: 100
+2026-02-23 15:24:11,991 - DataSplitting - INFO - Successfully split class: Tomato___Bacterial_spot | Train: 1701, Val: 213, Test: 213
+2026-02-23 15:24:15,321 - DataSplitting - INFO - Successfully split class: Orange___Haunglongbing_(Citrus_greening) | Train: 4405, Val: 551, Test: 551
+2026-02-23 15:24:16,439 - DataSplitting - INFO - Successfully split class: Squash___Powdery_mildew | Train: 1468, Val: 183, Test: 184
+2026-02-23 15:24:17,234 - DataSplitting - INFO - Successfully split class: Grape___Esca_(Black_Measles) | Train: 1106, Val: 138, Test: 139
+2026-02-23 15:24:17,556 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot | Train: 410, Val: 51, Test: 52
+2026-02-23 15:24:17,760 - DataSplitting - INFO - Successfully split class: Peach___healthy | Train: 288, Val: 36, Test: 36
+2026-02-23 15:24:17,917 - DataSplitting - INFO - Successfully split class: Apple___Cedar_apple_rust | Train: 220, Val: 27, Test: 28
+2026-02-23 15:24:18,478 - DataSplitting - INFO - Successfully split class: Tomato___Leaf_Mold | Train: 761, Val: 95, Test: 96
+2026-02-23 15:24:19,340 - DataSplitting - INFO - Successfully split class: Blueberry___healthy | Train: 1201, Val: 150, Test: 151
+2026-02-23 15:24:22,849 - DataSplitting - INFO - Successfully split class: Pepper,_bell___Bacterial_spot | Train: 797, Val: 100, Test: 100
+2026-02-23 15:24:25,811 - DataSplitting - INFO - Successfully split class: Tomato___Tomato_Yellow_Leaf_Curl_Virus | Train: 4285, Val: 536, Test: 536
+2026-02-23 15:24:26,704 - DataSplitting - INFO - Successfully split class: Corn_(maize)___healthy | Train: 929, Val: 116, Test: 117
+2026-02-23 15:24:27,211 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Northern_Leaf_Blight | Train: 788, Val: 98, Test: 99
+2026-02-23 15:24:29,877 - DataSplitting - INFO - Successfully split class: Soybean___healthy | Train: 4072, Val: 509, Test: 509
+2026-02-23 15:24:30,461 - DataSplitting - INFO - Successfully split class: Potato___Late_blight | Train: 800, Val: 100, Test: 100
+2026-02-23 15:24:31,404 - DataSplitting - INFO - Successfully split class: Apple___healthy | Train: 1316, Val: 164, Test: 165
+2026-02-23 15:24:32,445 - DataSplitting - INFO - Successfully split class: Grape___Leaf_blight_(Isariopsis_Leaf_Spot) | Train: 860, Val: 108, Test: 108
+2026-02-23 15:24:33,215 - DataSplitting - INFO - Successfully split class: Tomato___Target_Spot | Train: 1123, Val: 140, Test: 141
+2026-02-23 15:24:34,100 - DataSplitting - INFO - Successfully split class: Tomato___healthy | Train: 1272, Val: 159, Test: 160
+2026-02-23 15:24:35,118 - DataSplitting - INFO - Successfully split class: Tomato___Late_blight | Train: 1527, Val: 191, Test: 191
+2026-02-23 15:24:35,364 - DataSplitting - INFO - Successfully split class: Strawberry___healthy | Train: 364, Val: 46, Test: 46
+2026-02-23 15:24:35,573 - DataSplitting - INFO - Successfully split class: Raspberry___healthy | Train: 296, Val: 37, Test: 38
+2026-02-23 15:24:36,210 - DataSplitting - INFO - Successfully split class: Corn_(maize)___Common_rust_ | Train: 953, Val: 119, Test: 120
+2026-02-23 15:24:36,849 - DataSplitting - INFO - Successfully split class: Grape___Black_rot | Train: 944, Val: 118, Test: 118
+2026-02-23 15:24:37,087 - DataSplitting - INFO - Successfully split class: Grape___healthy | Train: 338, Val: 42, Test: 43
+2026-02-23 15:24:38,002 - DataSplitting - INFO - Successfully split class: Tomato___Spider_mites Two-spotted_spider_mite | Train: 1340, Val: 168, Test: 168
+2026-02-23 15:24:38,466 - DataSplitting - INFO - Successfully split class: Cherry_(including_sour)___healthy | Train: 683, Val: 85, Test: 86
+2026-02-23 15:24:39,077 - DataSplitting - INFO - Successfully split class: Cherry_(including_sour)___Powdery_mildew | Train: 841, Val: 105, Test: 106
+2026-02-23 15:24:39,162 - DataSplitting - INFO - Successfully split class: Potato___healthy | Train: 121, Val: 15, Test: 16
+2026-02-23 15:24:39,740 - DataSplitting - INFO - Successfully split class: Potato___Early_blight | Train: 800, Val: 100, Test: 100
+2026-02-23 15:24:39,950 - DataSplitting - INFO - Successfully split class: Tomato___Tomato_mosaic_virus | Train: 298, Val: 37, Test: 38
+2026-02-23 15:24:40,557 - DataSplitting - INFO - Successfully split class: Strawberry___Leaf_scorch | Train: 887, Val: 111, Test: 111
+2026-02-23 15:24:40,558 - DataSplitting - INFO - ✅ SUCCESS: Data splitting complete. (80/10/10 ratio)
+2026-02-23 15:24:40,558 - MainPipeline - INFO - ⚙️ Preprocessing images...
+2026-02-23 15:24:40,558 - ImageProcess - INFO - 🚀 Loading datasets from split directories...
+2026-02-23 15:24:44,832 - ImageProcess - INFO - ✅ Successfully loaded classes: ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight', 'Corn_(maize)___healthy', 'Grape___Black_rot', 'Grape___Esca_(Black_Measles)', 'Grape___Leaf_blight_(Isariopsis_Leaf_Spot)', 'Grape___healthy', 'Orange___Haunglongbing_(Citrus_greening)', 'Peach___Bacterial_spot', 'Peach___healthy', 'Pepper,_bell___Bacterial_spot', 'Pepper,_bell___healthy', 'Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy', 'Raspberry___healthy', 'Soybean___healthy', 'Squash___Powdery_mildew', 'Strawberry___Leaf_scorch', 'Strawberry___healthy', 'Tomato___Bacterial_spot', 'Tomato___Early_blight', 'Tomato___Late_blight', 'Tomato___Leaf_Mold', 'Tomato___Septoria_leaf_spot', 'Tomato___Spider_mites Two-spotted_spider_mite', 'Tomato___Target_Spot', 'Tomato___Tomato_Yellow_Leaf_Curl_Virus', 'Tomato___Tomato_mosaic_virus', 'Tomato___healthy']
+2026-02-23 15:24:44,945 - ImageProcess - INFO - ✅ Preprocessing & Prefetching Complete!
+2026-02-23 15:24:44,946 - DataAugmentation - INFO - 🛠️ Initializing heavy data augmentation layers...
+2026-02-23 15:24:44,968 - DataAugmentation - INFO - Applying augmentation to the training pipeline...
+2026-02-23 15:24:45,193 - DataAugmentation - INFO - ✅ Data Augmentation successfully added to the training pipeline!
+2026-02-23 15:24:45,194 - MainPipeline - INFO - 🚀 Launching MLflow Lifecycle...
+2026-02-23 15:24:45,194 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-23 15:24:45,195 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-23 15:25:01,456 - FullPipeline - INFO - Started MLflow Run: 976785efc13a409abdd17e7544efdc25
+2026-02-23 15:25:03,584 - FullPipeline - INFO - 🚀 Stage 1: Training the Head...
+2026-02-23 15:47:41,696 - FullPipeline - INFO - 🔓 Stage 2: Unfreezing last 50 layers...
+2026-02-23 17:07:02,343 - DataLoad - INFO - --- System Test ---
+2026-02-23 17:07:02,343 - DataLoad - INFO - TensorFlow Version: 2.20.0
+2026-02-23 17:07:03,658 - DataLoad - INFO - ✅ SUCCESS: GPU Detected and Enforced -> PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')
+2026-02-23 17:07:03,660 - DataLoad - INFO - Detected Devices: [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+2026-02-23 17:07:03,660 - DataLoad - INFO - --- Dataset Verification ---
+2026-02-23 17:07:03,663 - DataLoad - INFO - ✅ Success! Path exists.
+2026-02-23 17:07:03,663 - DataLoad - INFO - ✅ Total Classes Found: 38
+2026-02-23 17:07:03,663 - DataLoad - INFO - Sample Classes (First 10): ['Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy', 'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy', 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_', 'Corn_(maize)___Northern_Leaf_Blight']
+2026-02-23 17:07:07,182 - FullPipeline - INFO - ✅ Production Model Loaded into Wrapper.
+2026-02-23 17:07:23,366 - FullPipeline - INFO - 📦 Step 1: Registering model 'PlantModel_Prod'...
+2026-02-23 17:07:23,846 - FullPipeline - INFO - 🧪 Step 2: Transitioning version 3 to STAGING...
+2026-02-23 17:07:23,902 - FullPipeline - INFO - ⚖️ Step 3: Checking Quality Gate (Target: 80.0%)...
+2026-02-23 17:07:23,903 - FullPipeline - INFO - ✅ Quality Gate Passed! (Accuracy: 0.8344)
+2026-02-23 17:07:23,903 - FullPipeline - INFO - 🚀 Step 4: Promoting version 3 to PRODUCTION...
+2026-02-23 17:07:23,936 - FullPipeline - INFO - 🌟 Model version 3 is now LIVE in Production.
+2026-02-23 17:07:23,976 - MainPipeline - INFO - ✅ Pipeline Finished! Run ID: 976785efc13a409abdd17e7544efdc25
+2026-02-23 17:07:23,976 - MainPipeline - INFO - 🔗 Run 'mlflow ui' to see results.
