@@ -243,7 +243,16 @@ focusing on:
 - Reliability
 - Deployment readiness
 - Real-world agricultural applicability
+- 
+## 👨‍💻 Author
 
+**Youssef Mahmoud**
+Faculty of Computers & Information
+Aspiring **Data Scientist / ML Engineer**
+
+---
+URL Linked in : [https://www.linkedin.com/in/youssef-mahmoud-63b243361?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BKBSoRAFOSyucvi6vDlDfbg%3D%3D]
+⭐ If you like this project, consider giving it a star on GitHub!
 ---
 
 🌿 Intelligent Farming Starts with Intelligent Models.
