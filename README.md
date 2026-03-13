@@ -60,6 +60,28 @@ Dataset: PlantVillage (38 disease classes)
 - Dense(38, Softmax)
 
 ---
+Project Structure
+project/
+│
+├── data_loading.py
+├── EDA.py
+├── data_splitting.py
+├── image_process.py
+├── data_augmentation.py
+│
+├── model_pipeline.py
+├── MLproject
+├── conda.yaml
+│
+├── api/
+│   ├── api.py
+│   ├── config.py
+│
+├── dashboard/
+│   ├── app.py
+│
+└── README.md
+---
 
 # 🚀 Training Strategy (Professional Two-Stage Fine-Tuning)
 
@@ -233,7 +255,29 @@ Features:
 - Kubernetes containerization
 
 ---
+Architecture Diagram
+User
+ ↓
+Streamlit UI
+ ↓
+FastAPI
+ ↓
+MLflow Model Registry
+ ↓
+ResNet50 Model
+ ↓
+SQL Server Logging
+---
+Run Instructions
+# Run MLflow training
+mlflow run .
 
+# Start API
+uvicorn api:app --host 0.0.0.0 --port 8000
+
+# Run dashboard
+streamlit run app.py
+---
 # 👨‍💻 Author Mindset
 
 Built with a **Computer Vision Engineer + MLOps mindset**,  
