@@ -7,7 +7,7 @@ dependencies:
   - pip
   - pip:
       - mlflow
-      - tensorflow[and-cuda]  # عشان يدعم الـ GPU في WSL أو Linux
+      - tensorflow[and-cuda]  
       - matplotlib
       - numpy
       - pandas
