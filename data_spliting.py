@@ -2,7 +2,7 @@ import os
 import shutil
 import logging
 from sklearn.model_selection import train_test_split
-from logger_config import setup_logging # تأكد من اسم ملف اللوجر بتاعك
+from logger_config import setup_logging 
 
 # --- 1. INITIALIZE LOGGING ---
 setup_logging()
