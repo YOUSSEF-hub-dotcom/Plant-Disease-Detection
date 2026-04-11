@@ -5,6 +5,7 @@ import numpy as np
 import mlflow.pyfunc
 from datetime import datetime
 from PIL import Image
+from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, UploadFile, File, Depends, HTTPException, Request 
 from fastapi.middleware.cors import CORSMiddleware
@@ -19,23 +20,25 @@ from slowapi.errors import RateLimitExceeded
 
 from config import settings
 
-from contextlib import asynccontextmanager
-
-
-# --- 1. CONFIGURATION & LOGGING ---
+# --- 1. LOGGING CONFIGURATION ---
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s",
-    handlers=[logging.FileHandler("production_app.log"), logging.StreamHandler()]
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    handlers=[logging.FileHandler("plant_disease_api.log"), logging.StreamHandler()]
 )
-logger = logging.getLogger("PlantAPI")
+logger = logging.getLogger("PlantDiseaseAPI")
 
-# --- 2. DATABASE SETUP (SQL SERVER) ---
+# --- 2. DATABASE PERSISTENCE (SQL SERVER) ---
 Base = declarative_base()
-engine = create_engine(settings.DATABASE_URL)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+try:
+    engine = create_engine(settings.DATABASE_URL)
+    SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+    logger.info("Database engine initialized.")
+except Exception as e:
+    logger.critical(f"Database connection failed: {e}")
 
 class PredictionLog(Base):
+    """Table to store inference history and performance metrics."""
     __tablename__ = "prediction_logs"
     id = Column(Integer, primary_key=True, index=True)
     filename = Column(String(255))
@@ -44,75 +47,91 @@ class PredictionLog(Base):
     latency = Column(Float)
     created_at = Column(DateTime, default=datetime.utcnow)
 
-# إنشاء الجداول
+# Ensure schema exists
 Base.metadata.create_all(bind=engine)
 
-# --- 3. MODEL LOADER (MLflow) ---
+# --- 3. MODEL MANAGEMENT (MLflow & Warm-up) ---
+
 def load_production_model():
+    """Retrieves the registered ResNet50 model from MLflow Registry."""
     try:
-        logger.info(f"📡 Pulling Model from Registry: {settings.MODEL_URI}")
+        logger.info(f"📡 Fetching model from Registry: {settings.MODEL_URI}")
         model = mlflow.pyfunc.load_model(settings.MODEL_URI)
-        logger.info("✅ Production Model Loaded Successfully.")
+        logger.info("✅ Production model loaded successfully.")
         return model
     except Exception as e:
-        logger.error(f"❌ Critical Error Loading Model: {str(e)}")
-        raise RuntimeError(f"Could not load model from MLflow: {e}")
+        logger.error(f"❌ Critical Error: Could not load model: {str(e)}")
+        raise RuntimeError(f"MLflow model loading failed: {e}")
 
-# --- 3.5 WARM-UP FUNCTION ---
 def model_warmup(model):
-    """إرسال صورة وهمية للموديل لتجهيز الذاكرة والـ Cache و Kernels الـ GPU"""
+    """
+    Executes a dummy inference to initialize GPU/CPU kernels.
+    Mitigates latency spikes during the first real request.
+    """
     try:
-        logger.info("🔥 Starting GPU/CPU Warm-up (Cold Start Mitigation)...")
-        # إنشاء صورة عشوائية بنفس أبعاد ResNet50
+        logger.info("🔥 Starting Model Warm-up (Inference Cold-Start Mitigation)...")
+        # Generate random noise matching ResNet50 input shape
         dummy_input = np.random.uniform(0, 255, (1, *settings.IMG_SIZE, 3)).astype(np.float32)
-        # استخدام المعالجة الخاصة بـ ResNet50 لتنشيط الـ GPU Kernels
         dummy_input = preprocess_input(dummy_input)
-        # تنفيذ توقع وهمي - هنا الـ 19 ثانية هتحصل والسيرفر بيقوم
+        
+        # Trigger first prediction
         model.predict(dummy_input)
-        logger.info("⚡ Warm-up Complete. System is now highly responsive!")
+        logger.info("⚡ Warm-up complete. System is highly responsive.")
     except Exception as e:
-        logger.error(f"⚠️ Warm-up failed, but server will continue: {e}")
+        logger.warning(f"⚠️ Warm-up failed, but server will continue: {e}")
 
-# --- 4. FASTAPI APP INITIALIZATION ---
+# --- 4. LIFESPAN MANAGEMENT ---
 
-# [مهم جداً] تعريف الـ Lifespan لإدارة التشغيل
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # 1. تحميل الموديل عند بداية التشغيل
+    """Manages application startup and shutdown events."""
     global production_model
+    # Load and prep model before accepting requests
     production_model = load_production_model()
-    
-    # 2. تشغيل الـ Warm-up فوراً
     model_warmup(production_model)
     
     yield
-    # كود يتنفذ عند إغلاق السيرفر
-    logger.info("🛑 Shutting down PlantAPI...")
+    logger.info("🛑 Shutting down Plant Disease API...")
 
 app = FastAPI(
-    title=settings.PROJECT_NAME, 
-    lifespan=lifespan  # دي اللي بتفعل كل الكلام اللي فوق
+    title="Plant Disease Intelligence Platform", 
+    version="1.0.0",
+    lifespan=lifespan
 )
-# Middle & CORS configuration
+
+# --- 5. MIDDLEWARE & SECURITY ---
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.ALLOWED_ORIGINS, 
     allow_credentials=True,                
-    allow_methods=["GET", "POST", "PUT", "DELETE"],
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
 @app.middleware("http")
-async def add_process_time_header(request: Request, call_next):
+async def track_latency(request: Request, call_next):
     start_time = time.time()
     response = await call_next(request)
-    process_time = time.time() - start_time
-    response.headers["X-Process-Time"] = str(process_time)
+    response.headers["X-Inference-Latency"] = f"{time.time() - start_time:.4f}s"
     return response
 
+def get_smart_identifier(request: Request):
+    """Identifies users for rate limiting via JWT 'sub' or IP address."""
+    auth_header = request.headers.get("Authorization")
+    if auth_header and auth_header.startswith("Bearer "):
+        try:
+            token = auth_header.split(" ")[1]
+            payload = jwt.decode(token, options={"verify_signature": False})
+            return f"user:{payload.get('sub')}"
+        except:
+            pass
+    return f"ip:{get_remote_address(request)}"
 
+limiter = Limiter(key_func=get_smart_identifier)
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
-# Dependency للـ DB
 def get_db():
     db = SessionLocal()
     try:
@@ -120,76 +139,51 @@ def get_db():
     finally:
         db.close()
 
-
-# --- 5. RATE LIMITING ---
-
-# Rate limiting key function that checks for user ID in JWT or falls back to IP address
-def get_smart_identifier(request: Request):
-    auth_header = request.headers.get("Authorization")
-    if auth_header and auth_header.startswith("Bearer "):
-        try:
-            token = auth_header.split(" ")[1]
-            payload = jwt.decode(token, options={"verify_signature": False})
-            user_id = payload.get("sub")
-            if user_id:
-                return f"user:{user_id}"
-        except:
-            pass
-    return f"ip:{get_remote_address(request)}"
-
-
-limiter = Limiter(key_func=get_smart_identifier)
-app.state.limiter = limiter
-app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
-
-# --- 6. ENDPOINTS ---
-
-@app.get("/health")
-def health():
-    return {"status": "healthy", "model": settings.MODEL_URI, "time": datetime.now()}
+# --- 6. INFERENCE ENDPOINTS ---
 
 @app.post("/predict")
 @limiter.limit("10/minute")
-# لازم نضيف request هنا عشان الـ limiter يشتغل صح
-async def predict_disease(request: Request, file: UploadFile = File(...), db: Session = Depends(get_db)):
+async def predict_disease(
+    request: Request, 
+    file: UploadFile = File(...), 
+    db: Session = Depends(get_db)
+):
+    """
+    Predicts plant disease from an uploaded image.
+    Uses ResNet50 preprocessing and logs results to SQL Server.
+    """
     start_time = time.time()
     
-    # [A] Validation: تأكد من نوع الملف
+    # [A] Content Validation
     if not file.content_type.startswith("image/"):
-        logger.warning(f"🚫 Invalid file type: {file.content_type}")
-        raise HTTPException(status_code=400, detail="File must be an image.")
+        logger.warning(f"Rejected non-image upload: {file.content_type}")
+        raise HTTPException(status_code=400, detail="Only image files are supported.")
 
     try:
-        from tensorflow.keras.applications.resnet50 import preprocess_input
-
-# [B] Image Preprocessing (The Correct Way for ResNet50)
+        # [B] ResNet50 Specialized Preprocessing
         contents = await file.read()
         image = Image.open(io.BytesIO(contents)).convert("RGB")
         image = image.resize(settings.IMG_SIZE)
-
-# 1. تحويل الصورة لـ Numpy Array بدون قسمة يدوية
+        
+        # Transform to NumPy array
         img_array = np.array(image)
-
-# 2. إضافة بُعد الـ Batch (Batch Dimension)
+        # Expand dimensions to create Batch (1, H, W, C)
         img_array = np.expand_dims(img_array, axis=0)
+        # Apply ResNet50 specific scaling/normalization
+        img_array = preprocess_input(img_array.astype(np.float32))
 
-# 3. استخدام المعالجة الخاصة بـ ResNet50 (دي اللي هتحل المشكلة)
-        img_array = preprocess_input(img_array)
-
-        # [C] Inference
-        # استخدام الموديل اللي حملناه من MLflow
-        # ملحوظة: بما إننا شغالين pyfunc، الـ predict ممكن ترجع DataFrame أو Numpy
+        # [C] Model Inference
+        # pyfunc predicts return results as NumPy or DataFrame
         predictions = production_model.predict(img_array)
         
-        # لو الموديل بيرجع probabilities
+        # Post-processing results
         idx = np.argmax(predictions)
         confidence = float(np.max(predictions))
         result_label = settings.CLASS_NAMES[idx]
 
-        # [D] Latency & Monitoring
         latency = time.time() - start_time
         
-        # [E] Persistence (Logging to SQL Server)
+        # [D] Data Persistence
         new_log = PredictionLog(
             filename=file.filename,
             prediction=result_label,
@@ -200,28 +194,36 @@ async def predict_disease(request: Request, file: UploadFile = File(...), db: Se
         db.commit()
         db.refresh(new_log)
 
-        logger.info(f"✨ Prediction: {result_label} | Confidence: {confidence:.2f} | Latency: {latency:.4f}s")
+        logger.info(f"✨ Analysis Complete: {result_label} ({confidence:.2%}) | ID: {new_log.id}")
 
         return {
             "id": new_log.id,
-            "filename": new_log.filename,
+            "filename": file.filename,
             "prediction": result_label,
             "confidence": round(confidence, 4),
             "latency": f"{latency:.4f} sec",
-            "detected_at": new_log.created_at
+            "timestamp": new_log.created_at
         }
 
     except Exception as e:
-        db.rollback()
-        logger.error(f"💥 Pipeline Error: {str(e)}")
-        raise HTTPException(status_code=500, detail="Error processing image.")
+        if 'db' in locals(): db.rollback()
+        logger.error(f"Prediction Pipeline Failure: {str(e)}")
+        raise HTTPException(status_code=500, detail="An internal error occurred during image processing.")
+
+@app.get("/health")
+def health_check():
+    """Monitors service and model registry status."""
+    return {
+        "status": "ready", 
+        "model_version": settings.MODEL_URI, 
+        "server_time": datetime.now()
+    }
 
 @app.get("/")
-def health():
-    return {"status": "API is running 🚀"}
-
+def root():
+    return {"message": "Plant Disease Intelligence API is online. 🌿"}
 
 if __name__ == "__main__":
     import uvicorn
-    # تشغيل السيرفر
+    # Entry point for local development
     uvicorn.run(app, host="0.0.0.0", port=8000)
