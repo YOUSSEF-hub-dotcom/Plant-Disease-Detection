@@ -1,5 +1,5 @@
 import logging
-
+# Prevent duplication if the function is used more than once.
 def setup_logging():
     if not logging.getLogger().hasHandlers():
         logging.basicConfig(
