@@ -11,7 +11,7 @@ def apply_augmentation(train_ds):
     Augmentation is only applied to training data to improve model robustness.
     """
     try:
-        logger.info("🛠️ Initializing heavy data augmentation layers...")
+        logger.info(" Initializing heavy data augmentation layers...")
 
         # 1. Define the augmentation logic
         # 
@@ -36,9 +36,9 @@ def apply_augmentation(train_ds):
         # 3. Re-apply prefetch for performance optimization
         train_ds = train_ds.prefetch(buffer_size=tf.data.AUTOTUNE)
 
-        logger.info("✅ Data Augmentation successfully added to the training pipeline!")
+        logger.info(" Data Augmentation successfully added to the training pipeline!")
         return train_ds
 
     except Exception as e:
-        logger.error(f"❌ Failed to apply data augmentation: {str(e)}")
+        logger.error(f" Failed to apply data augmentation: {str(e)}")
         raise
