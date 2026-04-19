@@ -29,7 +29,7 @@ def main():
         
         args = parser.parse_args()
 
-        logger.info("🎬 Initializing the Full Plant Disease MLOps Pipeline...")
+        logger.info(" Initializing the Full Plant Disease MLOps Pipeline...")
 
         # --- PHASE 2: ENVIRONMENT & RAW DATA VERIFICATION ---
         # Ensure GPU is recognized and memory growth is managed
@@ -44,7 +44,7 @@ def main():
 
         # --- PHASE 3: DATA ARCHITECTURE & SPLITTING ---
         # Execute automated splitting into Train, Val, and Test folders
-        logger.info("📂 Executing Data Splitting into stratified directories...")
+        logger.info(" Executing Data Splitting into stratified directories...")
         run_splitting() 
         
         # Define the structure for processed splits
@@ -54,7 +54,7 @@ def main():
         TEST_DIR = os.path.join(SPLIT_BASE, 'test')
 
         # --- PHASE 4: PREPROCESSING & DATA AUGMENTATION ---
-        logger.info("⚙️ Commencing Image Preprocessing (ResNet50 Specialization)...")
+        logger.info(" Commencing Image Preprocessing (ResNet50 Specialization)...")
         
         # Ingest datasets and extract class names (38 classes)
         train_ds, val_ds, test_ds, class_names = prepare_datasets(
@@ -64,11 +64,11 @@ def main():
         )
         
         # Apply Data Augmentation only to the Training set to prevent overfitting
-        logger.info("🎨 Applying Real-time Data Augmentation to Training Pipeline...")
+        logger.info(" Applying Real-time Data Augmentation to Training Pipeline...")
         train_ds = apply_augmentation(train_ds)
 
         # --- PHASE 5: MLOPS LIFECYCLE (MLFLOW & TRAINING) ---
-        logger.info("🚀 Launching Integrated MLflow Lifecycle Governance...")
+        logger.info(" Launching Integrated MLflow Lifecycle Governance...")
         
         # Execute training with automated tracking, metric logging, and model registration
         run_id = run_full_mlops_lifecycle(
@@ -81,12 +81,12 @@ def main():
             epochs_stage2=args.epochs_stage2
         )
 
-        logger.info(f"✅ Pipeline Successfully Completed! Final Run ID: {run_id}")
-        logger.info("🔗 Action Required: Run 'mlflow ui' in your terminal to review results and quality gates.")
+        logger.info(f" Pipeline Successfully Completed! Final Run ID: {run_id}")
+        logger.info(" Action Required: Run 'mlflow ui' in your terminal to review results and quality gates.")
 
     except Exception as e:
         # High-severity logging for pipeline crashes
-        logger.critical(f"💥 Pipeline Execution Failed: {str(e)}", exc_info=True)
+        logger.critical(f" Pipeline Execution Failed: {str(e)}", exc_info=True)
         # Signal failure for any connected automation tools
         exit(1)
 
