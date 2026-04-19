@@ -10,7 +10,7 @@ def prepare_datasets(train_dir, val_dir, test_dir, img_size=(224, 224), batch_si
     Loads images, applies ResNet50 specialized preprocessing, and optimizes 
     the data pipeline for high-performance training.
     """
-    logger.info("🚀 Initiating data loading from split directories...")
+    logger.info(" Initiating data loading from split directories...")
 
     loader_params = {
         "image_size": img_size,
@@ -28,10 +28,10 @@ def prepare_datasets(train_dir, val_dir, test_dir, img_size=(224, 224), batch_si
         # 2. Extract and Cache Class Names
         # Crucial to capture these before any mapping or transformation
         class_names = raw_train_ds.class_names
-        logger.info(f"✅ Successfully identified {len(class_names)} classes.")
+        logger.info(f" Successfully identified {len(class_names)} classes.")
 
     except Exception as e:
-        logger.error(f"❌ Dataset Loading Failure: {e}")
+        logger.error(f" Dataset Loading Failure: {e}")
         raise
 
     # 3. Apply ResNet50 Specialized Preprocessing
@@ -59,6 +59,6 @@ def prepare_datasets(train_dir, val_dir, test_dir, img_size=(224, 224), batch_si
     val_ds = val_ds.prefetch(buffer_size=2)
     test_ds = test_ds.prefetch(buffer_size=2)
 
-    logger.info("✅ Data Pipeline Optimization: Shuffling and Prefetching Active.")
+    logger.info(" Data Pipeline Optimization: Shuffling and Prefetching Active.")
     
     return train_ds, val_ds, test_ds, class_names
