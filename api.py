@@ -57,10 +57,10 @@ def load_production_model():
     try:
         logger.info(f"📡 Fetching model from Registry: {settings.MODEL_URI}")
         model = mlflow.pyfunc.load_model(settings.MODEL_URI)
-        logger.info("✅ Production model loaded successfully.")
+        logger.info(" Production model loaded successfully.")
         return model
     except Exception as e:
-        logger.error(f"❌ Critical Error: Could not load model: {str(e)}")
+        logger.error(f" Critical Error: Could not load model: {str(e)}")
         raise RuntimeError(f"MLflow model loading failed: {e}")
 
 def model_warmup(model):
@@ -69,16 +69,16 @@ def model_warmup(model):
     Mitigates latency spikes during the first real request.
     """
     try:
-        logger.info("🔥 Starting Model Warm-up (Inference Cold-Start Mitigation)...")
+        logger.info(" Starting Model Warm-up (Inference Cold-Start Mitigation)...")
         # Generate random noise matching ResNet50 input shape
         dummy_input = np.random.uniform(0, 255, (1, *settings.IMG_SIZE, 3)).astype(np.float32)
         dummy_input = preprocess_input(dummy_input)
         
         # Trigger first prediction
         model.predict(dummy_input)
-        logger.info("⚡ Warm-up complete. System is highly responsive.")
+        logger.info(" Warm-up complete. System is highly responsive.")
     except Exception as e:
-        logger.warning(f"⚠️ Warm-up failed, but server will continue: {e}")
+        logger.warning(f" Warm-up failed, but server will continue: {e}")
 
 # --- 4. LIFESPAN MANAGEMENT ---
 
@@ -91,7 +91,7 @@ async def lifespan(app: FastAPI):
     model_warmup(production_model)
     
     yield
-    logger.info("🛑 Shutting down Plant Disease API...")
+    logger.info("Shutting down Plant Disease API...")
 
 app = FastAPI(
     title="Plant Disease Intelligence Platform", 
@@ -194,7 +194,7 @@ async def predict_disease(
         db.commit()
         db.refresh(new_log)
 
-        logger.info(f"✨ Analysis Complete: {result_label} ({confidence:.2%}) | ID: {new_log.id}")
+        logger.info(f" Analysis Complete: {result_label} ({confidence:.2%}) | ID: {new_log.id}")
 
         return {
             "id": new_log.id,
@@ -221,7 +221,7 @@ def health_check():
 
 @app.get("/")
 def root():
-    return {"message": "Plant Disease Intelligence API is online. 🌿"}
+    return {"message": "Plant Disease Intelligence API is online. "}
 
 if __name__ == "__main__":
     import uvicorn
