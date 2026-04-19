@@ -20,11 +20,11 @@ def configure_gpu():
     if gpus:
         try:
             tf.config.experimental.set_memory_growth(gpus[0], True)
-            logger.info(f"✅ SUCCESS: GPU Detected and Enforced -> {gpus[0]}")
+            logger.info(f" SUCCESS: GPU Detected and Enforced -> {gpus[0]}")
         except RuntimeError as e:
-            logger.error(f"⚠️ GPU Runtime Error: {e}")
+            logger.error(f" GPU Runtime Error: {e}")
     else:
-        logger.warning("❌ ERROR: No GPU detected. Check WSL CUDA drivers.")
+        logger.warning(" ERROR: No GPU detected. Check WSL CUDA drivers.")
     
     logger.info(f"Detected Devices: {tf.config.list_physical_devices()}")
 
@@ -34,12 +34,12 @@ def verify_dataset(base_path):
     if os.path.exists(base_path):
         all_classes = os.listdir(base_path)
         all_classes.sort()
-        logger.info(f"✅ Success! Path exists.")
-        logger.info(f"✅ Total Classes Found: {len(all_classes)}")
+        logger.info(f"Success! Path exists.")
+        logger.info(f"Total Classes Found: {len(all_classes)}")
         logger.info(f"Sample Classes (First 10): {all_classes[:10]}")
         return all_classes
     else:
-        logger.critical(f"❌ Critical Error: Path not found at: {base_path}")
+        logger.critical(f" Critical Error: Path not found at: {base_path}")
         # Debugging parent path
         parent_path = os.path.dirname(base_path)
         if os.path.exists(parent_path):
