@@ -26,7 +26,7 @@ class PlantDiseaseWrapper(mlflow.pyfunc.PythonModel):
     def load_context(self, context):
         # Load the Keras model from the provided artifacts path
         self.model = tf.keras.models.load_model(context.artifacts["keras_model"])
-        logger.info("✅ Production Model loaded into custom MLflow wrapper.")
+        logger.info("Production Model loaded into custom MLflow wrapper.")
 
     def predict(self, context, model_input):
         # Standardized prediction interface for downstream applications (API/Dashboard)
@@ -63,7 +63,7 @@ def train_plant_model(train_ds, val_ds, params):
     ]
 
     # STAGE 1: Head Initialization
-    logger.info("🚀 Stage 1: Initializing custom head training (Top Layers Only)...")
+    logger.info(" Stage 1: Initializing custom head training (Top Layers Only)...")
     model.compile(
         optimizer=tf.keras.optimizers.Adam(learning_rate=params["lr_stage1"]),
         loss='categorical_crossentropy', metrics=metrics
@@ -83,7 +83,7 @@ def train_plant_model(train_ds, val_ds, params):
     )
 
     # STAGE 2: Deep Fine-Tuning
-    logger.info("🔓 Stage 2: Unfreezing last 50 layers for specialized feature extraction...")
+    logger.info(" Stage 2: Unfreezing last 50 layers for specialized feature extraction...")
     base_model.trainable = True
     # Freeze the early layers (primitive features like edges/colors)
     for layer in base_model.layers[:-50]:
@@ -125,7 +125,7 @@ def run_full_mlops_lifecycle(train_ds, val_ds, test_ds, lr_stage1, lr_stage2, ep
         model, history = train_plant_model(train_ds, val_ds, params)
 
         # [B] Comprehensive Model Evaluation
-        logger.info("📊 Running final test set evaluation...")
+        logger.info(" Running final test set evaluation...")
         results = model.evaluate(test_ds)
         test_loss, test_acc, test_precision, test_recall = results[0:4]
 
@@ -167,30 +167,30 @@ def run_full_mlops_lifecycle(train_ds, val_ds, test_ds, lr_stage1, lr_stage2, ep
         model_name = params["model_name"]
 
         # Step 1: Automated Registration
-        logger.info(f"📦 Step 1: Registering model in Central Registry: {model_name}")
+        logger.info(f" Step 1: Registering model in Central Registry: {model_name}")
         model_details = mlflow.register_model(model_uri, model_name)
         version = model_details.version
 
         # Step 2: Transition to STAGING (Testing phase)
-        logger.info(f"🧪 Step 2: Moving Version {version} to STAGING...")
+        logger.info(f" Step 2: Moving Version {version} to STAGING...")
         client.transition_model_version_stage(
             name=model_name, version=version, stage="Staging"
         )
 
         # Step 3: Deployment Quality Gate (Logical Assessment)
-        logger.info(f"⚖️ Step 3: Verifying Quality Gate (Acc >= {params['quality_gate']})")
+        logger.info(f" Step 3: Verifying Quality Gate (Acc >= {params['quality_gate']})")
         
         if test_acc >= params["quality_gate"] and f1_score >= 0.75:
             # Step 4: Full Promotion to PRODUCTION
-            logger.info(f"✅ Quality Gate Passed! Accuracy: {test_acc:.2%}")
-            logger.info(f"🚀 Step 4: Promoting version {version} to PRODUCTION (LIVE)...")
+            logger.info(f" Quality Gate Passed! Accuracy: {test_acc:.2%}")
+            logger.info(f" Step 4: Promoting version {version} to PRODUCTION (LIVE)...")
             
             client.transition_model_version_stage(
                 name=model_name, version=version, stage="Production",
                 archive_existing_versions=True # Safely archive older production models
             )
-            logger.info(f"🌟 Model v{version} is now handling LIVE requests.")
+            logger.info(f" Model v{version} is now handling LIVE requests.")
         else:
-            logger.warning(f"⚠️ Quality Gate Failed (Acc: {test_acc:.2%}). Model remains in STAGING.")
+            logger.warning(f" Quality Gate Failed (Acc: {test_acc:.2%}). Model remains in STAGING.")
             
         return run_id
