@@ -54,7 +54,7 @@ def run_splitting():
         
         logger.info(f"Successfully split class: {class_name} | Train: {len(train_imgs)}, Val: {len(val_imgs)}, Test: {len(test_imgs)}")
 
-    logger.info("✅ SUCCESS: Data splitting complete. (80/10/10 ratio)")
+    logger.info(" SUCCESS: Data splitting complete. (80/10/10 ratio)")
 
 if __name__ == "__main__":
     run_splitting()
