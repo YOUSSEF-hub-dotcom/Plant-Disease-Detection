@@ -1,6 +1,6 @@
 import os
 import tensorflow as tf
-from logger_config import setup_logging # تأكد من اسم الملف اللي فيه كود اللوجينج بتاعك
+from logger_config import setup_logging 
 import logging
 
 # --- 1. INITIALIZE LOGGING ---
@@ -34,12 +34,12 @@ def verify_dataset(base_path):
     if os.path.exists(base_path):
         all_classes = os.listdir(base_path)
         all_classes.sort()
-        logger.info(f" Success! Path exists.")
-        logger.info(f" Total Classes Found: {len(all_classes)}")
+        logger.info(f"Success! Path exists.")
+        logger.info(f"Total Classes Found: {len(all_classes)}")
         logger.info(f"Sample Classes (First 10): {all_classes[:10]}")
         return all_classes
     else:
-        logger.critical(f"Critical Error: Path not found at: {base_path}")
+        logger.critical(f" Critical Error: Path not found at: {base_path}")
         # Debugging parent path
         parent_path = os.path.dirname(base_path)
         if os.path.exists(parent_path):
