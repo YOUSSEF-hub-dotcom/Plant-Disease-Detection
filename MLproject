@@ -1,0 +1,12 @@
+name: Plant_Disease_MLOps
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      lr_stage1: {type: float, default: 0.0001}
+      lr_stage2: {type: float, default: 0.00005}
+      epochs_stage1: {type: int, default: 10}
+      epochs_stage2: {type: int, default: 40}
+    command: "python main.py --lr_stage1 {lr_stage1} --lr_stage2 {lr_stage2} --epochs_stage1 {epochs_stage1} --epochs_stage2 {epochs_stage2}"
