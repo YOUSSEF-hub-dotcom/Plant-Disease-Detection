@@ -1,19 +1,28 @@
 import os
 from dotenv import load_dotenv
 
+# Load environment variables from the .env file
 load_dotenv(dotenv_path=".ENV")
 
 class Settings:
-    # 1. إعدادات الربط (من الـ .ENV)
+    """
+    Centralized configuration management for the Plant Disease Platform.
+    Environment variables are pulled from .env for security and flexibility.
+    """
+    
+    # --- 1. CORE CONNECTIVITY ---
     DATABASE_URL: str = os.getenv("DATABASE_URL")
     MODEL_URI: str = os.getenv("MODEL_URI")
+    # Convert comma-separated string to list for CORS configuration
     ALLOWED_ORIGINS: list = os.getenv("ALLOWED_ORIGINS", "*").split(",")
 
-    # 2. إعدادات المشروع والموديل
-    PROJECT_NAME: str = "Plant Disease Intelligence API"
+    # --- 2. PROJECT SPECIFICATIONS ---
+    PROJECT_NAME: str = "Plant Disease Intelligence Platform"
+    # ResNet50 standard input resolution
     IMG_SIZE: tuple = (224, 224) 
     
-    # 3. قائمة الكلاسات (الترجمة من رقم لاسم)
+    # --- 3. CLASS REGISTRY (38 TARGET CLASSES) ---
+    # Maps model index outputs to human-readable plant/disease labels
     CLASS_NAMES: list = [
         "Apple___Apple_scab", "Apple___Black_rot", "Apple___Cedar_apple_rust", "Apple___healthy",
         "Blueberry___healthy", "Cherry___Powdery_mildew", "Cherry___healthy",
@@ -27,4 +36,12 @@ class Settings:
         "Tomato___Tomato_mosaic_virus", "Tomato___healthy"
     ]
 
+    def __init__(self):
+        """Self-validation to ensure critical variables are present at startup."""
+        if not self.DATABASE_URL:
+            raise ValueError("DATABASE_URL is missing in .env file")
+        if not self.MODEL_URI:
+            raise ValueError("MODEL_URI is missing in .env file")
+
+# Global settings instance
 settings = Settings()
