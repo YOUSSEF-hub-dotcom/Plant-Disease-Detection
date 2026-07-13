@@ -1,0 +1,26 @@
+# ---- Deep Learning & Computer Vision ----
+tensorflow
+pillow
+
+# ---- Core & Data Science ----
+pandas
+numpy
+scikit-learn
+
+# ---- MLOps & Experiment Tracking ----
+mlflow
+
+# ---- API & Backend ----
+fastapi
+uvicorn
+python-multipart
+pydantic
+PyJWT
+slowapi
+SQLAlchemy
+
+# ---- Frontend & Dashboards ----
+streamlit
+requests
+plotly
+matplotlib
